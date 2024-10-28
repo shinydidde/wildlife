@@ -4,8 +4,12 @@ const AnimalCard = ({ animal }) => {
     const fallbackImage = "https://placehold.co/600x400"; // Placeholder image URL
     const imageUrl = animal.imageUrl || fallbackImage;
 
+    const handleCardClick = () => {
+        localStorage.setItem('animalDetails', JSON.stringify(animal)); // Save to local storage
+    };
+
     return (
-        <Link href={{ pathname: '/animal/[id]', query: animal }} as={`/animal/${animal._id}`}>
+        <Link href="/animal/[id]" as={`/animal/${animal._id}`} onClick={handleCardClick}>
             <div className="bg-white shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-lg p-4 m-2 w-64">
                 <img src={imageUrl} alt={animal.commonName} className="rounded-t-lg h-40 w-full object-cover" />
                 <h2 className="text-xl font-semibold mt-2 text-center">{animal.commonName}</h2>
