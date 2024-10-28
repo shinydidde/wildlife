@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const AnimalDetail: React.FC = () => {
     const router = useRouter();
@@ -43,7 +44,7 @@ const AnimalDetail: React.FC = () => {
 
     return (
         <>
-            <Header/>
+            <Header />
             <div className="bg-gray-100 min-h-screen flex flex-col p-6">
                 <div className="flex flex-col md:flex-row space-x-0 md:space-x-6 w-full">
                     {/* Animal Details Card */}
@@ -87,6 +88,7 @@ const AnimalDetail: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };
