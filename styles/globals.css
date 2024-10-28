@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* styles/globals.css */
+body {
+    scroll-behavior: smooth; /* Smooth scrolling */
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* Optional: Custom styles for header */
+  header {
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .sticky {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+
+/* Custom styles */
+.header-bg {
+  background-image: url('https://www.freewebheaders.com/wp-content/gallery/wildlife/cache/wild-predator-lioness-website-header.jpg-nggid043961-ngg0dyn-1280x375x100-00f0w010c010r110f110r010t010.jpg');
+  background-size: cover;
+  background-position: center;
+}
