@@ -2,32 +2,35 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-const images = [
-  'https://img.freepik.com/premium-photo/world-wildlife-day-creative-banner-with-planet-animals-ai-generated_154515-20870.jpg',
-  'https://img.freepik.com/premium-photo/world-wildlife-day-creative-banner-with-planet-animals-ai-generated_154515-20870.jpg',
-  'https://img.freepik.com/premium-photo/world-wildlife-day-creative-banner-with-planet-animals-ai-generated_154515-20870.jpg',
-];
+// Define props type
+interface ImageSliderProps {
+  images: string[];
+}
 
-const ImageSlider: React.FC = () => {
+const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: false,
+    adaptiveHeight: true,
+    fade: true,
+    pauseOnHover: false
   };
 
   return (
-    <div className="w-full h-10">
+    <div className="w-full h-full">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="h-full">
+          <div key={index}>
             <img
               src={image}
               alt={`Slider Image ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full object-cover rounded-lg"
             />
           </div>
         ))}

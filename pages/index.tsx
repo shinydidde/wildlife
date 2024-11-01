@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import AnimalCard from './components/AnimalCard';
 import Banner from './components/Banner';
 import BackToTop from './components/BackToTop';
+import ImageSlider from './components/ImageSlider';
 
 // Define the structure of the animal object
 interface Animal {
@@ -39,26 +40,52 @@ const categoryImages: { [key: string]: string } = {
     Microorganism: 'https://cdn.prod.website-files.com/607645f176105d6803fb88d5/66522e85e83286add69bb6f2_vecteezy_micro-organism-magnifie.jpg',
 };
 
+const images = [
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/pair-of-amazing-colorful-birds-website-banner_size-800x200.jpg-nggid0510000-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/beautiful-grass-elk-animal-website-banner_size-800x200.jpg-nggid048225-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/exotic-bird-of-paradise-banner_size-800x200.jpg-nggid049992-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/funny-Chimpanzee-thinking-in-future-banner_size-800x200.jpg-nggid048207-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/english-robin-sitting-on-flower-tree-website-banner_size-800x200.jpg-nggid049991-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/elephants-in-the-distance-sunset-landscape-website-banner_size-800x200.jpg-nggid048206-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/amazing-beautiful-colorful-bird-banner_size-800x200.jpg-nggid0510013-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/butterfly-on-yellow-sunflower-website-banner_size-800x200.jpg-nggid048182-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/amazing-beautiful-bluebird-banner_size-800x200.jpg-nggid0510012-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/pretty-swimming-gosling-banner_size-800x200.jpg-nggid048178-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/birds/cache/picker-bird-header.jpg-nggid03354-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/wildlife/cache/wildlife-header-22247-800x200.jpg-nggid03182-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+    'https://www.freewebheaders.com/wp-content/gallery/wildlife/cache/wildlife-header-22221-800x200.jpg-nggid03166-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
+
+];
+
 const Home = () => {
     const [animals, setAnimals] = useState<Animal[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(true); // Add loading state
-    const [searchTerm, setSearchTerm] = useState<string>(''); // Search term for filtering
+    const [loading, setLoading] = useState<boolean>(true);
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     useEffect(() => {
-        const fetchAnimals = async () => {
-            setLoading(true); // Set loading to true when starting to fetch
-            const res = await fetch('http://localhost:5002/api/animals'); // Ensure the API is running
-            const data: Animal[] = await res.json(); // Explicitly type the data
-            setAnimals(data);
+        const savedCategory = localStorage.getItem('selectedCategory');
+        const savedCountry = localStorage.getItem('selectedCountry');
 
-            // Extract unique categories
+        if (savedCategory) {
+            setSelectedCategory(savedCategory);
+        }
+        if (savedCountry) {
+            setSelectedCountry(savedCountry);
+        }
+
+        const fetchAnimals = async () => {
+            setLoading(true);
+            const res = await fetch('http://localhost:5002/api/animals');
+            const data: Animal[] = await res.json();
+            setAnimals(data);
             const categories = [...new Set(data.map(animal => animal.category))];
             setCategories(categories);
-            setLoading(false); // Set loading to false after data is fetched
+            setLoading(false);
         };
+
         fetchAnimals();
     }, []);
 
@@ -66,6 +93,18 @@ const Home = () => {
 
     const handleCountrySelect = (country: string) => {
         setSelectedCountry(country);
+        localStorage.setItem('selectedCountry', country);
+    };
+
+    const handleCategorySelect = (category: string) => {
+        if (selectedCategory === category) {
+            // Remove the selected category if it's already selected
+            setSelectedCategory(null);
+            localStorage.removeItem('selectedCategory');
+        } else {
+            setSelectedCategory(category);
+            localStorage.setItem('selectedCategory', category);
+        }
     };
 
     const filteredAnimals = animals.filter(animal => {
@@ -87,9 +126,8 @@ const Home = () => {
                     </div>
                 ) : (
                     <>
-                        {/* Banner Image */}
                         <div className="relative mb-6">
-                            <img src="https://wallpapercave.com/wp/wp4154076.jpg" alt="Wildlife Banner" className="w-full h-60 object-cover rounded-lg" />
+                            <ImageSlider images={images} />
                         </div>
 
                         {/* Search Bar and Location Selector */}
@@ -101,26 +139,25 @@ const Home = () => {
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg mb-4 lg:mb-0 lg:mr-4"
                             />
-                            <select
+                                <select
                                 className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg lg:ml-4"
-                                value={selectedCountry || ''}
-                                onChange={(e) => handleCountrySelect(e.target.value)}
-                            >
-                                <option value="">Select Location</option>
-                                {countries.map(country => (
-                                    <option key={country} value={country}>{country}</option>
-                                ))}
-                            </select>
-                        </div>
+                                    value={selectedCountry || ''}
+                                    onChange={(e) => handleCountrySelect(e.target.value)}
+                                >
+                                    <option value="">Select Location</option>
+                                    {countries.map(country => (
+                                        <option key={country} value={country}>{country}</option>
+                                    ))}
+                                </select>
+                            </div>
                         {/* Category Slider */}
                         <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center">Category {selectedCategory}</h1>
                         <div className="flex overflow-x-auto gap-4 mb-6">
                             {categories.map((category) => (
                                 <div
                                     key={category}
-                                    className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'
-                                        }`}
-                                    onClick={() => setSelectedCategory(category)}
+                                    className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'}`}
+                                    onClick={() => handleCategorySelect(category)}
                                 >
                                     <img
                                         src={categoryImages[category]}
@@ -135,7 +172,7 @@ const Home = () => {
                         </div>
 
                         {/* Animals Section */}
-                        {/* <h2 className="text-2xl font-bold mb-4 md:mb-6 text-center">Animals</h2> */}
+                        <h2 className="text-2xl font-bold mb-4 md:mb-6 text-center">Animals</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
                             {filteredAnimals.map(animal => (
                                 <AnimalCard key={animal._id} animal={animal} />
