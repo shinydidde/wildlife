@@ -9,9 +9,16 @@ app.use(express.json());
 const animalRoutes = require('./routes/animalRoutes');
 app.use('/api/animals', animalRoutes);
 
-mongoose.connect(process.env.MONGO_URI)
+// Connection options
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 100000, // Increase timeout to 20 seconds
+};
+
+mongoose.connect(process.env.MONGO_URI, options)
     .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log(err));
+    .catch(err => console.log("MongoDB connection error:", err));
 
 const PORT = process.env.PORT || 5002;
 app.listen(PORT, () => {
