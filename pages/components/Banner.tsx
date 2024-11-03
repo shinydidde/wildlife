@@ -1,9 +1,11 @@
 // src/components/Banner.tsx
 import React from 'react';
+import FallingLeaves from './FallingLeaves'; // Import the FallingLeaves component
 
 const Banner: React.FC = () => {
   return (
     <div className="relative py-16">
+      <FallingLeaves />
       <div className="container mx-auto flex flex-col items-center text-center">
         <h2 className="text-3xl font-bold text-green-600">Explore the Wild</h2>
         <h1 className="text-5xl font-extrabold text-green-700 mt-4">Discover Fascinating Animals & Their Habitats</h1>

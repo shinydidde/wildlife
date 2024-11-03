@@ -27,3 +27,20 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+
+.leaf {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  font-size: 24px; /* Adjust size of the leaf emoji */
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh); /* Move to the bottom of the viewport */
+  }
+}

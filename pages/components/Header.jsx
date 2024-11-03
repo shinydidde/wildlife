@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex items-center">
           <img
-            className="w-10 h-10 mr-2" // Add margin to the right for spacing
+            className="w-10 h-10 mr-2"
             src="https://png.pngtree.com/png-vector/20231215/ourmid/pngtree-care-about-wildlife-png-image_11364694.png"
             alt="Wildlife Logo"
           />

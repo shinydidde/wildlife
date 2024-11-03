@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 
 const AnimalDetail: React.FC = () => {
     const router = useRouter();
-    const [animalDetails, setAnimalDetails] = useState<any>(null); // Initialize state for animal details
+    const [animalDetails, setAnimalDetails] = useState<null>(null);
 
     useEffect(() => {
         // Check local storage for animal details

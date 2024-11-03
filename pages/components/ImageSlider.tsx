@@ -8,6 +8,9 @@ interface ImageSliderProps {
 }
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
+  if (!images || images.length === 0) {
+    return <div>No images available</div>; // Handle empty case
+  }
   const settings = {
     dots: false,
     infinite: true,
