@@ -13,7 +13,7 @@ app.use('/api/animals', animalRoutes);
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 100000, // Increase timeout to 20 seconds
+    serverSelectionTimeoutMS: 20000, // Increase timeout to 20 seconds
 };
 
 mongoose.connect(process.env.MONGO_URI, options)
