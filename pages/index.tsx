@@ -78,7 +78,7 @@ const Home = () => {
 
         const fetchAnimals = async () => {
             setLoading(true);
-            const res = await fetch('http://localhost:5002/api/animals');
+            const res = await fetch('https://wildlife-be.onrender.com/api/animals');
             const data: Animal[] = await res.json();
             setAnimals(data);
             const categories = [...new Set(data.map(animal => animal.category))];
