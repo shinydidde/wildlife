@@ -1,4 +1,3 @@
-// src/pages/graphs.tsx
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
@@ -6,14 +5,31 @@ import Header from './components/Header';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title);
 
+interface Animal {
+    _id: string;
+    commonName: string;
+    scientificName: string;
+    country: string;
+    category: string;
+    taxonomicGroup: string;
+    taxonomicSubGroup: string;
+    nyListingStatus: string;
+    federalListingStatus: string;
+    stateConservationRank: string;
+    globalConservationRank: string;
+    distributionStatus: string;
+    imageUrl: string; // Ensure imageUrl is included
+}
+
+
 const Graphs: React.FC = () => {
-    const [data, setData] = useState<any>(null);
+    const [data, setData] = useState<Animal[]>([]); // Changed to Animal[]
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch('https://wildlife-be.onrender.com/api/animals');
-            const result = await response.json();
+            const result: Animal[] = await response.json(); // Use the Animal[] type
             setData(result);
             setLoading(false);
         };
@@ -26,7 +42,7 @@ const Graphs: React.FC = () => {
     }
 
     // Prepare data for the category count chart
-    const categoriesCount = data.reduce((acc: any, animal: any) => {
+    const categoriesCount = data.reduce((acc: Record<string, number>, animal: Animal) => { // Specify type for accumulator
         const category = animal.category;
         acc[category] = (acc[category] || 0) + 1; // Count occurrences of each category
         return acc;
@@ -46,7 +62,7 @@ const Graphs: React.FC = () => {
     };
 
     // Prepare data for the conservation status chart
-    const conservationCount = data.reduce((acc: any, animal: any) => {
+    const conservationCount = data.reduce((acc: Record<string, number>, animal: Animal) => { // Specify type for accumulator
         const status = animal.stateConservationRank;
         acc[status] = (acc[status] || 0) + 1; // Count occurrences of each conservation status
         return acc;
