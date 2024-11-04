@@ -43,7 +43,7 @@ const images = [
     'https://i0.wp.com/www.chasingbugs.com/wp-content/uploads/2021/05/Plant-Native-Banner.jpg?w=2000&ssl=1',
     'https://images-us-prod.cms.commerce.dynamics.com/cms/api/mhtmhnbtbn/imageFileData/MC2Btj?ver=5996&w=2000&h=500&q=80&m=8&x=0&y=702&s=3825&d=956&f=jpg&b=%23F1EEE9',
     'https://a.storyblok.com/f/108167/2000x500/0108296c61/87bc9d3f-7d1b-e14e-9de0-844be4024a9a.jpg'
-  ];
+];
 
 const About: React.FC = () => {
     return (
@@ -54,14 +54,38 @@ const About: React.FC = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <ImageSlider images={images}/>
+            <ImageSlider images={images} />
             <div className="container mx-auto mt-8 p-4">
-                <h1 className="text-3xl font-bold mb-4">About Us</h1>
-                <p className="text-lg">
-                    Welcome to Wildlife Education! Our mission is to educate and inspire the next generation
-                    about the importance of wildlife conservation. Join us in our journey to learn about
-                    various species and their habitats.
+                <h1 className="text-3xl font-bold mb-4 text-center">About Us</h1>
+                <p className="text-lg mb-4">
+                    At Atlas, our mission is to inspire a deep appreciation for wildlife
+                    and the environment through innovative and engaging educational experiences. We believe that everyone
+                    has a role to play in conserving our planet’s biodiversity, and we strive to empower individuals with
+                    the knowledge and skills they need to make a difference.
                 </p>
+                <p className="text-lg mb-4">
+                    We envision a world where people of all ages are connected to nature and actively participate in
+                    wildlife conservation efforts. By providing accessible, interactive, and culturally relevant educational
+                    resources, we aim to foster a generation of informed advocates who are passionate about protecting our
+                    planet’s precious ecosystems.
+                </p>
+                <p className="text-lg mb-4">
+                    Atlas is a dedicated team of educators, conservationists, scientists,
+                    and tech enthusiasts who are passionate about wildlife and environmental education. We come from diverse
+                    backgrounds, united by a common goal: to create an engaging online platform that makes learning about
+                    wildlife fun, accessible, and impactful.
+                </p>
+                <p className="text-lg mb-4">
+                    Our platform provides a wide range of resources and tools designed to enhance wildlife education,
+                    including interactive learning modules, educational games, mindfulness practices, and community forums.
+                    We invite you to join us on this exciting journey toward wildlife conservation and education.
+                </p>
+                <p className="text-lg mb-4">
+                    Together, we can create a brighter future for wildlife and the ecosystems they inhabit.
+                </p>
+                <div className="flex justify-center mt-4">
+                    <img src="/logo.png" alt="Wildlife Logo" />
+                </div>
             </div>
             <Footer />
         </div>
