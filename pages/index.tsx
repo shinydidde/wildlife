@@ -41,20 +41,17 @@ const categoryImages: { [key: string]: string } = {
 };
 
 const images = [
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/pair-of-amazing-colorful-birds-website-banner_size-800x200.jpg-nggid0510000-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/beautiful-grass-elk-animal-website-banner_size-800x200.jpg-nggid048225-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/exotic-bird-of-paradise-banner_size-800x200.jpg-nggid049992-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/funny-Chimpanzee-thinking-in-future-banner_size-800x200.jpg-nggid048207-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/english-robin-sitting-on-flower-tree-website-banner_size-800x200.jpg-nggid049991-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/elephants-in-the-distance-sunset-landscape-website-banner_size-800x200.jpg-nggid048206-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/amazing-beautiful-colorful-bird-banner_size-800x200.jpg-nggid0510013-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/butterfly-on-yellow-sunflower-website-banner_size-800x200.jpg-nggid048182-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/amazing-beautiful-bluebird-banner_size-800x200.jpg-nggid0510012-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/animals-size-800x200/cache/pretty-swimming-gosling-banner_size-800x200.jpg-nggid048178-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/birds/cache/picker-bird-header.jpg-nggid03354-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/wildlife/cache/wildlife-header-22247-800x200.jpg-nggid03182-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-    'https://www.freewebheaders.com/wp-content/gallery/wildlife/cache/wildlife-header-22221-800x200.jpg-nggid03166-ngg0dyn-800x200x100-00f0w010c010r110f110r010t010.jpg',
-
+    'https://www.kotora.jp/en/images/photo01.jpg',
+    'https://www.westmarkhotels.com/wp-content/uploads/bear.jpg',
+    'https://seatrailma.com/wp-content/uploads/2023/05/STMA-Banner-Thinerbeach-1.jpg',
+    'https://www.rogersvetservice.com/wp-content/uploads/livestock-background-2.jpg',
+    'https://merwinski.pl/wp-content/uploads/2021/04/naglowek-tygrys.png',
+    'https://dierenparkamersfoort.nl/wp-content/uploads/2020/01/Header-dukat.jpg',
+    'http://agouravet.com/wp-content/uploads/2017/03/banner3.jpg',
+    'https://c.imgcdn.me/893a7ca0d25a4450dd78feb289ff89211804c35d/bark/inner_banner_products-copy.png',
+    'https://dierenparkamersfoort.nl/wp-content/uploads/2019/07/Beisa-oryx-Banner.jpg',
+    'https://www.naturalvetcare.co.uk/img/homepage/cat-banner/cat-images.jpg',
+    'https://www.rogersvetservice.com/wp-content/uploads/dog-cat-background-1.jpg'
 ];
 
 const Home = () => {
@@ -127,7 +124,7 @@ const Home = () => {
                 ) : (
                     <>
                         <div className="relative mb-6">
-                            <ImageSlider images={images} />
+                            <ImageSlider images={images}/>
                         </div>
 
                         {/* Search Bar and Location Selector */}

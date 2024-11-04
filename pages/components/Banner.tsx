@@ -12,7 +12,7 @@ const Banner: React.FC = () => {
       </div>
       <div className="absolute inset-0">
         <img
-          src="https://wallpapercave.com/wp/wp7507088.jpg"
+          src="https://lh6.googleusercontent.com/proxy/mQWQuGsjqsoe5xVaz0KDaWg3Tsk94gM6bTCnfK32ZBymx0gcc2gxsqlbd2QTaXEg4Aj27RG6imATCAmBpnJsxwvrrH2c7yQV7Excn5hBHctBbxvgcUOAIAYLEw"
           alt="Discover Fascinating Animals & Their Habitats"
           className="w-full h-full object-cover opacity-50"
         />
