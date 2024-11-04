@@ -8,7 +8,7 @@ const Header = () => {
         <Link href="/" className="flex items-center">
           <img
             className="w-10 h-10 mr-2"
-            src="/logo.png"
+            src="/logo-color.png"
             alt="Wildlife Logo"
           />
           <h1 className="text-2xl font-bold text-green-600">Atlas</h1>
