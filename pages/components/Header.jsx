@@ -4,10 +4,10 @@ import Link from 'next/link';
 const Header = () => {
   return (
     <header className="sticky top-0 bg-transparent shadow-md z-50 transition-all duration-300">
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center p-2">
         <Link href="/" className="flex items-center">
           <img
-            className="w-10 h-10 mr-2"
+            className="w-8 h-12 mr-3"
             src="/logo-color.png"
             alt="Wildlife Logo"
           />
