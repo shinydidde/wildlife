@@ -2,6 +2,8 @@
 import React from 'react';
 import FallingLeaves from './FallingLeaves'; // Import the FallingLeaves component
 
+// http://www.joyfulhedgehogs.com/uploads/1/1/5/0/11507248/bannersnek_3.jpg
+
 const Banner: React.FC = () => {
   return (
     <div className="relative py-16">
@@ -12,7 +14,7 @@ const Banner: React.FC = () => {
       </div>
       <div className="absolute inset-0">
         <img
-          src="https://lh6.googleusercontent.com/proxy/mQWQuGsjqsoe5xVaz0KDaWg3Tsk94gM6bTCnfK32ZBymx0gcc2gxsqlbd2QTaXEg4Aj27RG6imATCAmBpnJsxwvrrH2c7yQV7Excn5hBHctBbxvgcUOAIAYLEw"
+          src="https://soundwaterstewards.org/wp-content/uploads/2021/07/header-red-star.jpg"
           alt="Discover Fascinating Animals & Their Habitats"
           className="w-full h-full object-cover opacity-50"
         />

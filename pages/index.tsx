@@ -41,17 +41,30 @@ const categoryImages: { [key: string]: string } = {
 };
 
 const images = [
-    'https://www.kotora.jp/en/images/photo01.jpg',
     'https://www.westmarkhotels.com/wp-content/uploads/bear.jpg',
+    'https://www.kotora.jp/en/images/photo01.jpg',
+    'https://www.npfmc.org/wp-content/uploads/Cod_SeaAllianceAGDB-web.jpg',
+    'https://www.npfmc.org/wp-content/uploads/crab-hero-1.jpg',
     'https://seatrailma.com/wp-content/uploads/2023/05/STMA-Banner-Thinerbeach-1.jpg',
     'https://www.rogersvetservice.com/wp-content/uploads/livestock-background-2.jpg',
     'https://merwinski.pl/wp-content/uploads/2021/04/naglowek-tygrys.png',
     'https://dierenparkamersfoort.nl/wp-content/uploads/2020/01/Header-dukat.jpg',
     'http://agouravet.com/wp-content/uploads/2017/03/banner3.jpg',
+    'https://www.npfmc.org/wp-content/uploads/puffin.jpg',
     'https://c.imgcdn.me/893a7ca0d25a4450dd78feb289ff89211804c35d/bark/inner_banner_products-copy.png',
     'https://dierenparkamersfoort.nl/wp-content/uploads/2019/07/Beisa-oryx-Banner.jpg',
+    'https://npfmc.org/wp-content/uploads/walrus.jpg',
     'https://www.naturalvetcare.co.uk/img/homepage/cat-banner/cat-images.jpg',
-    'https://www.rogersvetservice.com/wp-content/uploads/dog-cat-background-1.jpg'
+    'https://camhirst3dcp.com/wp-content/uploads/2022/04/Tiger.png',
+    'https://www.greaterdandenong.vic.gov.au/sites/default/files/styles/focal_point_2000_200/public/2020-05/CGD-July2019_FULL-14.jpg?h=0cb787b7',
+    'https://www.greaterdandenong.vic.gov.au/sites/default/files/styles/focal_point_2000_200/public/2020-12/IMAGE%20Bushfood%20and%20blue%20tongues%20CEP%20%28A7148875%29.jpg?h=b643fad7',
+    'https://www.rogersvetservice.com/wp-content/uploads/dog-cat-background-1.jpg',
+    'https://www.greaterdandenong.vic.gov.au/sites/default/files/styles/focal_point_2000_200/public/2021-10/IMG_9115.JPG?h=f5632aca',
+    'https://www.npfmc.org/wp-content/uploads/bird.jpg',
+    'https://www.npfmc.org/wp-content/uploads/crab-web-2.jpg',
+    'https://www.npfmc.org/wp-content/uploads/flatfish-and-crab-2-web.jpg',
+    'https://www.npfmc.org/wp-content/uploads/201112-Salmon-Sides-2-Web.jpg',
+    'https://www.npfmc.org/wp-content/uploads/201112-Scallops-on-Deck-CM-Web.jpg',
 ];
 
 const Home = () => {
@@ -113,7 +126,7 @@ const Home = () => {
     });
 
     return (
-        <div className="bg-gray-100 min-h-screen flex flex-col">
+        <div className="bg-white min-h-screen flex flex-col">
             <Header />
             <Banner />
             <div className="container mx-auto mt-8">
