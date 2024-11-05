@@ -45,7 +45,11 @@ body {
   }
 }
 
+.logo-slider .slick-slide img {
+  height: 100%;
+  width: 100px;
+}
 
-.slick-slide img {
-  height: 128px;
+.logo-slider .w-full {
+  width: 80px;
 }

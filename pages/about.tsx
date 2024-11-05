@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ImageSlider from './components/ImageSlider';
 
+
 const images = [
     'https://pangolinphoto.com/wp-content/uploads/2021/12/pangolin-widlife-photo-safari-tips.jpg',
     'https://www.texasamhotelcc.com/site/assets/files/11338/aggie-land-safari.2000x500.webp',
@@ -83,9 +84,6 @@ const About: React.FC = () => {
                 <p className="text-lg mb-4">
                     Together, we can create a brighter future for wildlife and the ecosystems they inhabit.
                 </p>
-                <div className="flex justify-center mt-4">
-                    <img src="/logo.png" alt="Wildlife Logo" />
-                </div>
             </div>
             <Footer />
         </div>
