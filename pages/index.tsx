@@ -7,6 +7,7 @@ import AnimalCard from './components/AnimalCard';
 import Banner from './components/Banner';
 import BackToTop from './components/BackToTop';
 import ImageSlider from './components/ImageSlider';
+import Head from 'next/head';
 
 // Define the structure of the animal object
 interface Animal {
@@ -126,31 +127,49 @@ const Home = () => {
     });
 
     return (
-        <div className="bg-white lg:min-h-screen flex flex-col">
-            <Header />
-            <Banner />
-            <div className="container mx-auto mt-8">
-                {loading ? (
-                    <div className="flex justify-center items-center h-screen">
-                        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500"></div>
-                    </div>
-                ) : (
-                    <>
-                        <div className="relative mb-6">
-                            <ImageSlider images={images}/>
-                        </div>
+        <>
+            <Head>
+                <title>Animal Atlas</title>
+                <meta name="description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
 
-                        {/* Search Bar and Location Selector */}
-                        <div className="flex flex-col lg:flex-row mb-6 items-center justify-between">
-                            <input
-                                type="text"
-                                placeholder="Search for an animal..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                                className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg mb-4 lg:mb-0 lg:mr-4"
-                            />
+                {/* Open Graph Tags */}
+                <meta property="og:title" content="Animal Atlas" />
+                <meta property="og:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
+                <meta property="og:image" content="/logo-colorful.png" />
+                <meta property="og:url" content="https://wildlife-2pl7.onrender.com" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Card Tags (optional but recommended) */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Animal Atlas" />
+                <meta name="twitter:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
+                <meta name="twitter:image" content="/logo-colorful.png" />
+            </Head>
+            <div className="bg-white lg:min-h-screen flex flex-col">
+                <Header />
+                <Banner />
+                <div className="container mx-auto mt-8">
+                    {loading ? (
+                        <div className="flex justify-center items-center h-screen">
+                            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500"></div>
+                        </div>
+                    ) : (
+                        <>
+                            <div className="relative mb-6">
+                                <ImageSlider images={images} />
+                            </div>
+
+                            {/* Search Bar and Location Selector */}
+                            <div className="flex flex-col lg:flex-row mb-6 items-center justify-between">
+                                <input
+                                    type="text"
+                                    placeholder="Search for an animal..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg mb-4 lg:mb-0 lg:mr-4"
+                                />
                                 <select
-                                className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg lg:ml-4"
+                                    className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg lg:ml-4"
                                     value={selectedCountry || ''}
                                     onChange={(e) => handleCountrySelect(e.target.value)}
                                 >
@@ -160,40 +179,41 @@ const Home = () => {
                                     ))}
                                 </select>
                             </div>
-                        {/* Category Slider */}
-                        <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center">Category {selectedCategory}</h1>
-                        <div className="flex overflow-x-auto gap-4 mb-6">
-                            {categories.map((category) => (
-                                <div
-                                    key={category}
-                                    className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'}`}
-                                    onClick={() => handleCategorySelect(category)}
-                                >
-                                    <img
-                                        src={categoryImages[category]}
-                                        alt={category}
-                                        className="w-full h-32 object-cover rounded-lg"
-                                    />
-                                    <h2 className="absolute bottom-2 left-0 right-0 text-lg font-semibold text-white text-center bg-gray-900 bg-opacity-50 rounded-b-lg">
-                                        {category}
-                                    </h2>
-                                </div>
-                            ))}
-                        </div>
+                            {/* Category Slider */}
+                            <h1 className="text-3xl font-bold mb-4 md:mb-6 text-center">Category {selectedCategory}</h1>
+                            <div className="flex overflow-x-auto gap-4 mb-6">
+                                {categories.map((category) => (
+                                    <div
+                                        key={category}
+                                        className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'}`}
+                                        onClick={() => handleCategorySelect(category)}
+                                    >
+                                        <img
+                                            src={categoryImages[category]}
+                                            alt={category}
+                                            className="w-full h-32 object-cover rounded-lg"
+                                        />
+                                        <h2 className="absolute bottom-2 left-0 right-0 text-lg font-semibold text-white text-center bg-gray-900 bg-opacity-50 rounded-b-lg">
+                                            {category}
+                                        </h2>
+                                    </div>
+                                ))}
+                            </div>
 
-                        {/* Animals Section */}
-                        <h2 className="text-2xl font-bold mb-4 md:mb-6 text-center">Animals</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
-                            {filteredAnimals.map(animal => (
-                                <AnimalCard key={animal._id} animal={animal} />
-                            ))}
-                        </div>
-                    </>
-                )}
+                            {/* Animals Section */}
+                            <h2 className="text-2xl font-bold mb-4 md:mb-6 text-center">Animals</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+                                {filteredAnimals.map(animal => (
+                                    <AnimalCard key={animal._id} animal={animal} />
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+                <Footer />
+                <BackToTop />
             </div>
-            <Footer />
-            <BackToTop />
-        </div>
+        </>
     );
 };
 
