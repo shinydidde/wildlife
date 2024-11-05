@@ -47,7 +47,7 @@ const images = [
 
 const About: React.FC = () => {
     return (
-        <div className="bg-gray-100 min-h-screen flex flex-col">
+        <div className="bg-gray-100 lg:min-h-screen flex flex-col">
             <Head>
                 <title>About Us</title>
                 <meta name="description" content="Learn more about our wildlife education platform." />

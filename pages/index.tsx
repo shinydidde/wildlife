@@ -126,7 +126,7 @@ const Home = () => {
     });
 
     return (
-        <div className="bg-white min-h-screen flex flex-col">
+        <div className="bg-white lg:min-h-screen flex flex-col">
             <Header />
             <Banner />
             <div className="container mx-auto mt-8">

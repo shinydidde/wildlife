@@ -44,3 +44,8 @@ body {
     transform: translateY(100vh); /* Move to the bottom of the viewport */
   }
 }
+
+
+.slick-slide img {
+  height: 128px;
+}
