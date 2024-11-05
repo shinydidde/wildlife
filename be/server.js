@@ -1,9 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import the cors package
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
+
+// Enable CORS for all routes
+app.use(cors({
+    origin: '*', // Allows all origins. You can specify an array of allowed origins here if needed.
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed headers
+}));
 
 // Your routes would be imported and used here
 const animalRoutes = require('./routes/animalRoutes');
