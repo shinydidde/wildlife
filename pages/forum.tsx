@@ -2,15 +2,16 @@
 import React from 'react';
 import Forum from './components/Forum';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const ForumPage: React.FC = () => {
     return (
         <>
-            <Header />
-        <div className="container mx-auto my-8">
-            <h1 className="text-4xl font-bold text-center">Wildlife Discussion Forum</h1>
-            <Forum />
-        </div>
+            <Header theme='dark' />
+            <div className="container mx-auto my-8 mt-32">
+                <Forum />
+            </div>
+            <Footer />
         </>
     );
 };

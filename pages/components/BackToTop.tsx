@@ -28,7 +28,7 @@ const BackToTop: React.FC = () => {
         isVisible && (
             <button
                 onClick={handleScrollToTop}
-                className="fixed bottom-4 right-4 bg-green-600 text-white rounded-full p-3 shadow-lg hover:bg-green-700 transition duration-300"
+                className="fixed bottom-4 right-4 bg-green-900 text-white rounded-full p-3 shadow-lg hover:bg-green-700 transition duration-300"
                 aria-label="Back to top"
             >
                 ↑

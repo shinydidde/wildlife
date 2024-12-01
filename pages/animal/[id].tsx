@@ -45,7 +45,7 @@ const AnimalDetail: React.FC = () => {
     return (
         <>
             <Header />
-            <div className="bg-gray-100 min-h-screen flex flex-col p-6">
+            <div className="min-h-screen flex flex-col p-6">
                 <div className="flex flex-col md:flex-row space-x-0 md:space-x-6 w-full">
                     {/* Animal Details Card */}
                     <div className="bg-white rounded-lg shadow-md p-6 w-full md:w-2/5">
