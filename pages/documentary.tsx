@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import { useEffect, useState } from 'react';
 import DocumentaryVideo from './components/DocumentaryVideo';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ImageSlider from './components/ImageSlider';
 
 interface Documentary {
     id: string;
@@ -14,13 +17,14 @@ const DocumentaryPage: React.FC = () => {
     const [documentaries, setDocumentaries] = useState<Documentary[]>([]);
     const [likes, setLikes] = useState<{ [key: string]: boolean }>({});
     const [comments, setComments] = useState<{ [key: string]: string }>({});
+    const [images, setImages] = useState<string[]>([]); // Added state to hold images
 
     useEffect(() => {
-        // Fetch the documentaries data from JSON file
         const fetchDocumentaries = async () => {
             const response = await fetch('/data/documentaries.json'); // Adjust the path if necessary
-            const data: Documentary[] = await response.json();
-            setDocumentaries(data);
+            const data: { documentaries: Documentary[], images: string[] } = await response.json();
+            setDocumentaries(data.documentaries);
+            setImages(data.images);
         };
 
         fetchDocumentaries();
@@ -37,6 +41,7 @@ const DocumentaryPage: React.FC = () => {
     return (
         <>
             <Header theme="dark" />
+            <ImageSlider images={images} />
             <div className="container mx-auto my-8 p-6">
                 <h1 className="text-4xl font-bold text-center text-green-700 mb-6">Wildlife Conservation Documentaries</h1>
                 <p className="text-lg text-center text-gray-600 mb-8">

@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AnimalCard from './components/AnimalCard';
-// import Banner from './components/Banner';
 import BackToTop from './components/BackToTop';
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,8 +26,6 @@ const categoryIcons: { [key: string]: JSX.Element } = {
     Microorganism: <FontAwesomeIcon icon={faBacterium} size="3x" />,
 };
 
-
-// Define the structure of the animal object
 interface Animal {
     _id: string;
     commonName: string;
@@ -40,9 +37,8 @@ interface Animal {
     stateConservationRank: string;
     globalConservationRank: string;
     distributionStatus: string;
-    imageUrl: string; // Ensure imageUrl is included
+    imageUrl: string;
 }
-
 
 const Home = () => {
     const [animals, setAnimals] = useState<Animal[]>([]);
@@ -51,6 +47,10 @@ const Home = () => {
     const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [searchTerm, setSearchTerm] = useState<string>('');
+
+    // Pagination state
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const itemsPerPage = 20;
 
     useEffect(() => {
         const savedCategory = localStorage.getItem('selectedCategory');
@@ -76,7 +76,6 @@ const Home = () => {
                 setCategories(categories);
             } catch (error) {
                 console.error('Error fetching animals:', error);
-                // Handle error - you can show an error message to the user
             } finally {
                 setLoading(false);
             }
@@ -94,7 +93,6 @@ const Home = () => {
 
     const handleCategorySelect = (category: string) => {
         if (selectedCategory === category) {
-            // Remove the selected category if it's already selected
             setSelectedCategory(null);
             localStorage.removeItem('selectedCategory');
         } else {
@@ -103,6 +101,7 @@ const Home = () => {
         }
     };
 
+    // Filtered animals based on search term, category, and country
     const filteredAnimals = animals.filter(animal => {
         const matchesCategory = selectedCategory ? animal.category === selectedCategory : true;
         const matchesCountry = selectedCountry ? animal.country === selectedCountry : true;
@@ -110,6 +109,41 @@ const Home = () => {
 
         return matchesCategory && matchesCountry && matchesSearch;
     });
+
+    // Pagination logic
+    const totalPages = Math.ceil(filteredAnimals.length / itemsPerPage);
+
+    const currentAnimals = filteredAnimals.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+    const handlePageChange = (page: number) => {
+        if (page > 0 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
+
+    const createPageNumbers = () => {
+        const pageNumbers = [];
+        const maxPages = totalPages;
+
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(maxPages, currentPage + 2);
+
+        if (currentPage > 3) {
+            pageNumbers.push(1);
+            pageNumbers.push('...');
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            pageNumbers.push(i);
+        }
+
+        if (currentPage < maxPages - 2) {
+            pageNumbers.push('...');
+            pageNumbers.push(maxPages);
+        }
+
+        return pageNumbers;
+    };
 
     return (
         <>
@@ -130,9 +164,9 @@ const Home = () => {
                 <meta name="twitter:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
                 <meta name="twitter:image" content="/logo-colorful.png" />
             </Head>
+
             <div className="lg:min-h-screen flex flex-col">
                 <Header />
-                {/* Banner Section */}
                 <div className="relative bg-cover bg-center h-[90vh]" style={{ backgroundImage: `url('https://images4.alphacoders.com/134/1345397.png')` }}>
                     <div className="absolute inset-0 bg-opacity-40 bg-green-800 flex flex-col justify-center items-center text-white">
                         <h1 className="text-5xl font-extrabold">WILDLIFE</h1>
@@ -141,7 +175,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Animal Cards Below the Banner */}
                 <div className="container mx-auto mt-8">
                     {loading ? (
                         <div className="flex justify-center items-center h-screen">
@@ -149,11 +182,6 @@ const Home = () => {
                         </div>
                     ) : (
                         <>
-                            {/* <div className="relative mb-6">
-                                <ImageSlider images={images} />
-                            </div> */}
-
-                            {/* Search Bar and Location Selector */}
                             <div className="flex flex-col lg:flex-row mb-6 items-center justify-between">
                                 <input
                                     type="text"
@@ -162,8 +190,6 @@ const Home = () => {
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                     className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg mb-4 lg:mb-0 lg:mr-4"
                                 />
-
-                                {/* Custom Dropdown */}
                                 <div className="relative lg:w-1/4 w-full">
                                     <select
                                         className="block appearance-none w-full bg-white border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md hover:shadow-lg"
@@ -218,13 +244,44 @@ const Home = () => {
 
                             <h2 className="text-3xl font-bold text-center mb-6">Animals of the Wild</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
-                                {filteredAnimals.map(animal => (
+                                {currentAnimals.map(animal => (
                                     <AnimalCard key={animal._id} animal={animal} />
                                 ))}
                             </div>
+
+                            {/* Pagination Controls */}
+                            <div className="flex justify-center mt-20 flex-wrap items-center">
+                                <button
+                                    onClick={() => handlePageChange(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                    className="px-4 py-2 bg-green-600 text-white rounded-lg mr-4 mb-2 sm:mb-0"
+                                >
+                                    Previous
+                                </button>
+
+                                {createPageNumbers().map((page, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => handlePageChange(typeof page === 'number' ? page : currentPage)}
+                                        className={`px-4 py-2 ${page === currentPage ? 'bg-green-700 text-white' : 'bg-gray-200'} rounded-lg mx-1 mb-2 sm:mb-0`}
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+
+                                <button
+                                    onClick={() => handlePageChange(currentPage + 1)}
+                                    disabled={currentPage === totalPages}
+                                    className="px-4 py-2 bg-green-600 text-white rounded-lg ml-4 mb-2 sm:mb-0"
+                                >
+                                    Next
+                                </button>
+                            </div>
+
                         </>
                     )}
                 </div>
+
                 <Footer />
                 <BackToTop />
             </div>

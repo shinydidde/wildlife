@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Banner from './components/Banner';
 
 const ContactUsPage = () => {
     const [name, setName] = useState('');
@@ -26,7 +27,8 @@ const ContactUsPage = () => {
         <div className="min-h-screen flex flex-col">
             <Header theme="dark" />
 
-            <div className="container mx-auto mt-32 px-4">
+                <Banner/>
+            <div className="container mx-auto mt-12 px-4">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-green-600">Contact Us</h2>
                     <p className="text-xl mt-4 text-gray-700">
