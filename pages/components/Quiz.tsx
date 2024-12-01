@@ -15,6 +15,26 @@ const Quiz: React.FC = () => {
     const [feedback, setFeedback] = useState<string | null>(null);
     const [timer, setTimer] = useState<number>(30); // Timer set to 30 seconds for each question
 
+    // Handle answer logic moved before useEffect
+    const handleAnswer = useCallback((option: string) => {
+        if (option === questions[currentQuestion].answer) {
+            setScore(score + 1);
+            setFeedback("Correct!");
+        } else {
+            setFeedback(`Incorrect! The correct answer was ${questions[currentQuestion].answer}`);
+        }
+
+        if (currentQuestion < questions.length - 1) {
+            setTimeout(() => {
+                setFeedback(null);
+                setCurrentQuestion(currentQuestion + 1);
+                setTimer(30); // Reset timer for the next question
+            }, 1500);
+        } else {
+            setTimeout(() => setQuizFinished(true), 1500);
+        }
+    }, [currentQuestion, score, questions]);
+
     // Load quiz data from JSON file
     useEffect(() => {
         const loadQuizData = async () => {
@@ -37,27 +57,7 @@ const Quiz: React.FC = () => {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [timer]);
-
-    // Use useCallback to memoize the function and prevent unnecessary re-renders
-    const handleAnswer = useCallback((option: string) => {
-        if (option === questions[currentQuestion].answer) {
-            setScore(score + 1);
-            setFeedback("Correct!");
-        } else {
-            setFeedback(`Incorrect! The correct answer was ${questions[currentQuestion].answer}`);
-        }
-
-        if (currentQuestion < questions.length - 1) {
-            setTimeout(() => {
-                setFeedback(null);
-                setCurrentQuestion(currentQuestion + 1);
-                setTimer(30); // Reset timer for the next question
-            }, 1500);
-        } else {
-            setTimeout(() => setQuizFinished(true), 1500);
-        }
-    }, [currentQuestion, score, questions]);
+    }, [timer, handleAnswer]); // Add handleAnswer to the dependency array
 
     const handleRestart = () => {
         setCurrentQuestion(0);
