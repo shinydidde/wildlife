@@ -1,32 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DocumentaryVideo from './components/DocumentaryVideo';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const documentaries = [
-    {
-        id: 'bS1P5OGgNwQ',
-        title: 'The Last Wild',
-        description: 'An exploration of the challenges and efforts in wildlife conservation across the globe. A compelling look at endangered species.',
-        category: 'Endangered Species'
-    },
-    {
-        id: 'oMjwX6wtHJw',
-        title: 'The Hidden World of Elephants',
-        description: 'Delve deep into the lives of elephants and understand their struggle against poaching and habitat loss.',
-        category: 'Poaching & Habitat Loss'
-    },
-    {
-        id: '5gQkU6_HIE0',
-        title: 'Saving the Planet',
-        description: 'A documentary that explores the effects of climate change on wildlife and the efforts to mitigate it.',
-        category: 'Climate Change'
-    }
-];
+interface Documentary {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+}
 
 const DocumentaryPage: React.FC = () => {
+    const [documentaries, setDocumentaries] = useState<Documentary[]>([]);
     const [likes, setLikes] = useState<{ [key: string]: boolean }>({});
     const [comments, setComments] = useState<{ [key: string]: string }>({});
+
+    useEffect(() => {
+        // Fetch the documentaries data from JSON file
+        const fetchDocumentaries = async () => {
+            const response = await fetch('/data/documentaries.json'); // Adjust the path if necessary
+            const data: Documentary[] = await response.json();
+            setDocumentaries(data);
+        };
+
+        fetchDocumentaries();
+    }, []);
 
     const handleLike = (id: string) => {
         setLikes((prevLikes) => ({ ...prevLikes, [id]: !prevLikes[id] }));
@@ -38,7 +36,7 @@ const DocumentaryPage: React.FC = () => {
 
     return (
         <>
-            <Header theme='dark' />
+            <Header theme="dark" />
             <div className="container mx-auto my-8 p-6">
                 <h1 className="text-4xl font-bold text-center text-green-700 mb-6">Wildlife Conservation Documentaries</h1>
                 <p className="text-lg text-center text-gray-600 mb-8">
@@ -62,8 +60,8 @@ const DocumentaryPage: React.FC = () => {
                     ))}
                 </div>
             </div>
-            <Footer/>
-    </>
+            <Footer />
+        </>
     );
 };
 

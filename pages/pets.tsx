@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'; // Import useRouter
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -8,83 +9,25 @@ interface Pet {
     image: string;
     category: string;
     description: string;
+    careTips: string[];
+    funFact: string;
 }
 
 const PetToWildlifePage = () => {
+    const router = useRouter(); // Initialize router
     const [pets, setPets] = useState<Pet[]>([]); // Use Pet[] instead of any[]
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     useEffect(() => {
-        // Dummy data for pets and wildlife connection
-        setPets([
-            {
-                name: 'Dog',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Golden_Retriever_puppy.jpg',
-                category: 'Mammal',
-                description: 'Dogs are loyal pets and are often referred to as man\'s best friend. They require regular exercise and a proper diet.'
-            },
-            {
-                name: 'Cat',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Calico_cat_on_chair.jpg',
-                category: 'Mammal',
-                description: 'Cats are independent and curious animals. They make wonderful companions but need space to roam and explore.'
-            },
-            {
-                name: 'Parrot',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Parrot_in_the_park.jpg',
-                category: 'Bird',
-                description: 'Parrots are intelligent and colorful birds, known for their ability to mimic sounds and speech.'
-            },
-            {
-                name: 'Hamster',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Golden_hamster.jpg',
-                category: 'Mammal',
-                description: 'Hamsters are small, nocturnal rodents that make great pets for children. They are low maintenance but need space to exercise.'
-            },
-            {
-                name: 'Kangaroo',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/A_red_kangaroo_in_Mount_Margaret.jpg',
-                category: 'Mammal',
-                description: 'Kangaroos are iconic Australian animals known for their powerful hind legs and unique hopping movement.'
-            },
-            {
-                name: 'Elephant',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/1/19/African_Bush_Elephant_in_Kruger_National_Park.jpg',
-                category: 'Mammal',
-                description: 'Elephants are the largest land animals, known for their intelligence, strong family bonds, and environmental importance.'
-            },
-            {
-                name: 'Lion',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Lion_in_Ranthambhore_National_Park.jpg',
-                category: 'Mammal',
-                description: 'Lions are known as the kings of the jungle and are one of the most iconic and endangered species of big cats.'
-            },
-            {
-                name: 'Penguin',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/4/42/African_penguin.jpg',
-                category: 'Bird',
-                description: 'Penguins are flightless birds that are well adapted to life in the water. They are known for their playful nature.'
-            },
-            {
-                name: 'Tiger',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Tiger_in_Ranthambhore.jpg',
-                category: 'Mammal',
-                description: 'Tigers are powerful apex predators, known for their distinctive orange coat with black stripes and large territories.'
-            },
-            {
-                name: 'Tortoise',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg',
-                category: 'Reptile',
-                description: 'Tortoises are slow-moving reptiles with hard, protective shells. They live for long periods and require a warm habitat.'
-            },
-            {
-                name: 'Frog',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Green_tree_frog_%28Hyla_viridissima%29.jpg',
-                category: 'Amphibian',
-                description: 'Frogs are amphibians known for their jumping abilities, vocal calls, and moist skin. They play a critical role in ecosystems.'
-            }
-        ]);
+        // Fetch data from the petsData.json file
+        const fetchPetsData = async () => {
+            const res = await fetch('./petsData.json'); // Adjust the path as needed
+            const data: Pet[] = await res.json();
+            setPets(data);
+        };
+
+        fetchPetsData();
     }, []);
 
     const handleCategorySelect = (category: string) => {
@@ -95,7 +38,7 @@ const PetToWildlifePage = () => {
 
     return (
         <div className="min-h-screen flex flex-col">
-            <Header theme='dark'/>
+            <Header theme="dark" />
             <div className="container mx-auto mt-32 px-4">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-green-600">Understanding Animal Care: From Pets to Wildlife</h2>
@@ -178,7 +121,10 @@ const PetToWildlifePage = () => {
                             />
                             <h3 className="text-lg font-semibold text-gray-800">{pet.name}</h3>
                             <p className="text-gray-600 mb-4">{pet.description}</p>
-                            <button className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200">
+                            <button
+                                onClick={() => router.push(`/pets/${pet.name.toLowerCase()}`)} // Correct usage of router.push
+                                className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200"
+                            >
                                 Learn More
                             </button>
                         </div>

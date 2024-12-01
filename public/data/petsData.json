@@ -1,0 +1,234 @@
+[
+    {
+        "name": "Dog",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Golden_Retriever_puppy.jpg",
+        "category": "Mammal",
+        "description": "Dogs are loyal pets and are often referred to as man's best friend. They require regular exercise, a balanced diet, and a lot of love. Dogs come in various breeds with different temperaments and needs.",
+        "careTips": [
+            "Provide regular exercise to keep them active and healthy.",
+            "Keep them hydrated with fresh water at all times.",
+            "Provide training and socialization to help them adapt to different environments.",
+            "Ensure they have a comfortable place to rest and sleep.",
+            "Monitor their health regularly with vet check-ups."
+        ],
+        "funFact": "Dogs have been living alongside humans for over 15,000 years.",
+        "relatedPets": [
+            {
+                "name": "Cat",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Calico_cat_on_chair.jpg",
+                "description": "Cats are independent and curious animals. They are wonderful companions but need space to roam and explore."
+            }
+        ]
+    },
+    {
+        "name": "Cat",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Calico_cat_on_chair.jpg",
+        "category": "Mammal",
+        "description": "Cats are independent and curious animals. They make wonderful companions but need space to roam and explore. Unlike dogs, cats generally enjoy being alone but are also affectionate when they choose to be.",
+        "careTips": [
+            "Provide scratching posts to satisfy their natural behavior.",
+            "Ensure proper litter box maintenance to keep their environment clean.",
+            "Give them space to explore, climb, and rest in peaceful spots.",
+            "Provide fresh food, including wet food for hydration.",
+            "Offer mental stimulation with toys and interaction."
+        ],
+        "funFact": "Cats can make over 100 different sounds, compared to dogs, which can make about 10.",
+        "relatedPets": [
+            {
+                "name": "Dog",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Golden_Retriever_puppy.jpg",
+                "description": "Dogs are loyal pets and are often referred to as man's best friend."
+            }
+        ]
+    },
+    {
+        "name": "Parrot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Parrot_in_the_park.jpg",
+        "category": "Bird",
+        "description": "Parrots are colorful, intelligent birds known for their ability to mimic human speech. They are social animals and can live for decades with proper care. Parrots need attention, stimulation, and an appropriate diet.",
+        "careTips": [
+            "Provide fresh food and water daily.",
+            "Offer toys and challenges to keep their mind active.",
+            "Allow them out of their cage for social interaction and exercise.",
+            "Ensure their living environment is spacious and safe.",
+            "Provide them with regular vet check-ups, as they are susceptible to certain diseases."
+        ],
+        "funFact": "Parrots are capable of mimicking human speech, and some can learn to recognize over 100 words.",
+        "relatedPets": [
+            {
+                "name": "Hamster",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Golden_hamster.jpg",
+                "description": "Hamsters are small, nocturnal rodents that make great pets for children."
+            }
+        ]
+    },
+    {
+        "name": "Hamster",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Golden_hamster.jpg",
+        "category": "Mammal",
+        "description": "Hamsters are small, nocturnal rodents that make great pets for children. They are low maintenance but need space to exercise, a proper diet, and a clean living environment.",
+        "careTips": [
+            "Provide a safe and secure cage with plenty of space.",
+            "Ensure they have bedding for nesting and burrowing.",
+            "Avoid overfeeding sugary treats and stick to a balanced diet of seeds and fresh vegetables.",
+            "Keep their cage clean to prevent odor and bacteria buildup.",
+            "Allow them to explore outside their cage in a safe, contained area."
+        ],
+        "funFact": "Hamsters are known for storing food in their cheek pouches to eat later.",
+        "relatedPets": [
+            {
+                "name": "Kangaroo",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/A_red_kangaroo_in_Mount_Margaret.jpg",
+                "description": "Kangaroos are iconic Australian animals known for their powerful hind legs."
+            }
+        ]
+    },
+    {
+        "name": "Kangaroo",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/A_red_kangaroo_in_Mount_Margaret.jpg",
+        "category": "Mammal",
+        "description": "Kangaroos are iconic Australian animals known for their powerful hind legs and unique hopping movement. They are herbivores and live in the wild, often in open grasslands or forested areas.",
+        "careTips": [
+            "Provide large spaces for hopping and exercise.",
+            "Offer a diet of grasses, leaves, and plants.",
+            "Ensure safe enclosures with natural habitat mimicking their wild environment.",
+            "Provide clean water at all times for hydration.",
+            "Monitor their health and ensure they have a balanced diet."
+        ],
+        "funFact": "Kangaroos can leap up to 3 meters in a single bound, using their strong hind legs.",
+        "relatedPets": [
+            {
+                "name": "Elephant",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/African_Bush_Elephant_in_Kruger_National_Park.jpg",
+                "description": "Elephants are the largest land animals, known for their intelligence, social structures, and environmental importance."
+            }
+        ]
+    },
+    {
+        "name": "Elephant",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/African_Bush_Elephant_in_Kruger_National_Park.jpg",
+        "category": "Mammal",
+        "description": "Elephants are the largest land animals, known for their intelligence, social structures, and importance in their ecosystems. They are herbivores and require vast amounts of food and space.",
+        "careTips": [
+            "Provide large enclosures with ample space for roaming.",
+            "Feed them a diet rich in grass, fruits, and tree bark.",
+            "Ensure access to fresh water for drinking and bathing.",
+            "Maintain a comfortable environment with shade to protect from heat.",
+            "Monitor their social interactions and ensure they live in groups for emotional well-being."
+        ],
+        "funFact": "Elephants are capable of recognizing themselves in a mirror, which is a sign of high intelligence.",
+        "relatedPets": [
+            {
+                "name": "Lion",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Lion_in_Ranthambhore_National_Park.jpg",
+                "description": "Lions are apex predators and live in groups called prides."
+            }
+        ]
+    },
+    {
+        "name": "Lion",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Lion_in_Ranthambhore_National_Park.jpg",
+        "category": "Mammal",
+        "description": "Lions are known as the kings of the jungle. They are powerful apex predators and have an important role in the ecosystem. Lions are social animals that live in groups called prides.",
+        "careTips": [
+            "Provide large enclosures with plenty of space to roam and exercise.",
+            "Feed a proper diet of fresh meat for nutrition.",
+            "Ensure the enclosures are secure and mimic their natural habitat.",
+            "Provide mental stimulation to prevent boredom, such as environmental enrichment.",
+            "Ensure regular veterinary check-ups for disease prevention."
+        ],
+        "funFact": "Lions are the only cats that live in social groups, also known as prides.",
+        "relatedPets": [
+            {
+                "name": "Penguin",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/African_penguin.jpg",
+                "description": "Penguins are flightless birds that are well adapted to life in the water."
+            }
+        ]
+    },
+    {
+        "name": "Penguin",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/African_penguin.jpg",
+        "category": "Bird",
+        "description": "Penguins are flightless birds that are well adapted to life in the water. They are known for their playful nature.",
+        "careTips": [
+            "Provide a cool or temperate climate to mimic their natural environment.",
+            "Ensure they have access to swimming areas for exercise and enjoyment.",
+            "Feed them a diet of fish, krill, and other sea creatures.",
+            "Provide a safe space for nesting and resting.",
+            "Monitor their health, as penguins are susceptible to various diseases."
+        ],
+        "funFact": "Penguins are excellent swimmers and can dive to great depths in search of food.",
+        "relatedPets": [
+            {
+                "name": "Tiger",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Tiger_in_Ranthambhore.jpg",
+                "description": "Tigers are apex predators known for their distinctive orange coat with black stripes."
+            }
+        ]
+    },
+    {
+        "name": "Tiger",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Tiger_in_Ranthambhore.jpg",
+        "category": "Mammal",
+        "description": "Tigers are apex predators, known for their distinctive orange coat with black stripes. They have large territories and are solitary by nature, requiring a spacious environment to thrive.",
+        "careTips": [
+            "Provide a large, secure environment with plenty of space.",
+            "Feed a diet of fresh meat and ensure they are kept in good health.",
+            "Provide mental stimulation through scent trails and environmental enrichment.",
+            "Ensure safety measures are in place to prevent escape.",
+            "Monitor their health regularly with veterinary check-ups."
+        ],
+        "funFact": "Tigers have the largest canine teeth of any wild cat species.",
+        "relatedPets": [
+            {
+                "name": "Tortoise",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+                "description": "Tortoises are slow-moving reptiles with hard, protective shells."
+            }
+        ]
+    },
+    {
+        "name": "Tortoise",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+        "category": "Reptile",
+        "description": "Tortoises are slow-moving reptiles known for their hard, protective shells. They are among the longest-living animals on the planet, with some species living to be over 100 years old. Tortoises are primarily herbivores and require a warm habitat with plenty of space to roam.",
+        "careTips": [
+            "Provide a warm, dry environment with access to fresh water for hydration.",
+            "Feed them a diet rich in leafy greens, vegetables, and occasional fruits.",
+            "Ensure their living space is large enough to allow them to roam and explore.",
+            "Offer hiding spots to give them a sense of security.",
+            "Monitor their health and make sure they have access to adequate sunlight for Vitamin D synthesis."
+        ],
+        "funFact": "Some species of tortoises can live for over 100 years, making them one of the longest-living animals on Earth.",
+        "relatedPets": [
+            {
+                "name": "Frog",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Green_tree_frog_%28Hyla_viridissima%29.jpg",
+                "description": "Frogs are amphibians known for their jumping abilities, vocal calls, and moist skin."
+            }
+        ]
+    },
+    {
+        "name": "Frog",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Green_tree_frog_%28Hyla_viridissima%29.jpg",
+        "category": "Amphibian",
+        "description": "Frogs are amphibians known for their jumping abilities, vocal calls, and moist skin. They play a critical role in ecosystems by controlling insect populations and serving as food for other animals. Frogs are found in a variety of habitats, from forests to wetlands.",
+        "careTips": [
+            "Keep them in a moist, humid environment with access to water and land areas.",
+            "Feed them small insects like crickets, flies, and worms.",
+            "Maintain a tank with proper filtration and temperature regulation.",
+            "Ensure they have hiding spots and a comfortable, quiet place to rest.",
+            "Monitor for signs of stress or illness, such as lack of appetite or skin discoloration."
+        ],
+        "funFact": "Frogs can leap up to 20 times their body length in a single jump!",
+        "relatedPets": [
+            {
+                "name": "Tortoise",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+                "description": "Tortoises are slow-moving reptiles with hard, protective shells."
+            }
+        ]
+    }
+
+]

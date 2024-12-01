@@ -14,7 +14,7 @@ const QuizPage: React.FC = () => {
     return (
         <>
             <Header theme='dark' />
-            <div className="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg max-w-3xl">
+            <div className="container mx-auto my-8 p-6 mt-32 bg-white rounded-lg shadow-lg max-w-3xl">
                 <div className="text-center">
                     <h1 className="text-4xl font-extrabold text-green-700 mb-4">Wildlife Quiz</h1>
                     <p className="text-lg text-gray-600 mb-6">

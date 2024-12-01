@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is the largest land animal?",
+        "options": ["Elephant", "Giraffe", "Rhino", "Hippo"],
+        "answer": "Elephant"
+    },
+    {
+        "question": "Which animal is known as the king of the jungle?",
+        "options": ["Lion", "Tiger", "Elephant", "Bear"],
+        "answer": "Lion"
+    },
+    {
+        "question": "What is the primary diet of a Giant Panda?",
+        "options": ["Bamboo", "Meat", "Fruit", "Fish"],
+        "answer": "Bamboo"
+    },
+    {
+        "question": "Which bird is known for its ability to mimic human speech?",
+        "options": ["Parrot", "Eagle", "Sparrow", "Owl"],
+        "answer": "Parrot"
+    },
+    {
+        "question": "What type of animal is a green whale?",
+        "options": ["Fish", "Mammal", "Reptile", "Amphibian"],
+        "answer": "Mammal"
+    },
+    {
+        "question": "Which species is known to be the fastest land animal?",
+        "options": ["Cheetah", "Lion", "Gazelle", "Horse"],
+        "answer": "Cheetah"
+    },
+    {
+        "question": "What is the main threat to the survival of many species today?",
+        "options": ["Climate Change", "Habitat Loss", "Pollution", "Overfishing"],
+        "answer": "Habitat Loss"
+    },
+    {
+        "question": "Which animal has the longest migration route?",
+        "options": ["Arctic Tern", "Humpback Whale", "Salmon", "Caribou"],
+        "answer": "Arctic Tern"
+    },
+    {
+        "question": "What is the primary role of bees in the ecosystem?",
+        "options": ["Predators", "Pollinators", "Decomposers", "Herbivores"],
+        "answer": "Pollinators"
+    },
+    {
+        "question": "What percentage of the Earth's surface is covered by oceans?",
+        "options": ["50%", "70%", "80%", "90%"],
+        "answer": "70%"
+    }
+]

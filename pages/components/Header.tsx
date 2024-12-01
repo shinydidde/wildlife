@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             Pets
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
           >
             Contact
@@ -119,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             Pets
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
             onClick={() => setIsMenuOpen(false)}
           >
