@@ -20,7 +20,9 @@ const AnimalCard: React.FC<{ animal: Animal }> = ({ animal }) => {
 
     // Handle case where animal is undefined
     if (!animal) {
-        return <div className="bg-gray-200 p-4 rounded-lg">Loading...</div>; // Show loading or error message
+        return <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500"></div>
+    </div>; // Show loading or error message
     }
 
     return (

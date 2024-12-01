@@ -31,7 +31,7 @@ const PetDetailsPage = () => {
         const petNameStr = Array.isArray(petName) ? petName[0] : petName;
         if (petNameStr) {
             // Fetch pet data from the JSON file
-            fetch('/petsData.json')
+            fetch('/data/petsData.json')
                 .then(response => response.json())
                 .then((data: Pet[]) => {
                     const foundPet = data.find((p) => p.name.toLowerCase() === petNameStr?.toLowerCase());

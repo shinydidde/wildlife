@@ -40,7 +40,9 @@ const AnimalDetail: React.FC = () => {
     const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(formattedCommonName)}`;
 
     // Handle case where data is not yet available
-    if (!commonNameStr) return <div>Loading...</div>;
+    if (!commonNameStr) return <div className="min-h-screen flex items-center justify-center">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500"></div>
+</div>;
 
     return (
         <>

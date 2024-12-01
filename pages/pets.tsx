@@ -22,7 +22,7 @@ const PetToWildlifePage = () => {
     useEffect(() => {
         // Fetch data from the petsData.json file
         const fetchPetsData = async () => {
-            const res = await fetch('./petsData.json'); // Adjust the path as needed
+            const res = await fetch('/data/petsData.json'); // Adjust the path as needed
             const data: Pet[] = await res.json();
             setPets(data);
         };
