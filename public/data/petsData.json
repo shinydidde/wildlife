@@ -1,7 +1,7 @@
 [
     {
         "name": "Dog",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Golden_Retriever_puppy.jpg",
+        "image": "https://www.nativebreed.org/wp-content/uploads/2020/06/American-Eskimo-1.jpeg",
         "category": "Mammal",
         "description": "Dogs are loyal pets and are often referred to as man's best friend. They require regular exercise, a balanced diet, and a lot of love. Dogs come in various breeds with different temperaments and needs.",
         "careTips": [
@@ -15,14 +15,14 @@
         "relatedPets": [
             {
                 "name": "Cat",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Calico_cat_on_chair.jpg",
+                "image": "https://premiumpethouse.com/public/img/ginger-cat/ginger-cat-india-premiumpethouse4.jpg",
                 "description": "Cats are independent and curious animals. They are wonderful companions but need space to roam and explore."
             }
         ]
     },
     {
         "name": "Cat",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Calico_cat_on_chair.jpg",
+        "image": "https://premiumpethouse.com/public/img/ginger-cat/ginger-cat-india-premiumpethouse4.jpg",
         "category": "Mammal",
         "description": "Cats are independent and curious animals. They make wonderful companions but need space to roam and explore. Unlike dogs, cats generally enjoy being alone but are also affectionate when they choose to be.",
         "careTips": [
@@ -36,14 +36,14 @@
         "relatedPets": [
             {
                 "name": "Dog",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Golden_Retriever_puppy.jpg",
+                "image": "https://www.nativebreed.org/wp-content/uploads/2020/06/American-Eskimo-1.jpeg",
                 "description": "Dogs are loyal pets and are often referred to as man's best friend."
             }
         ]
     },
     {
         "name": "Parrot",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Parrot_in_the_park.jpg",
+        "image": "https://rukminim2.flixcart.com/image/850/1000/l3ahpjk0/poster/q/r/k/small-parrot-birds-poster-birds-poster-poster-animals-poster-for-original-imageg3seznnzhnc.jpeg?q=90&crop=false",
         "category": "Bird",
         "description": "Parrots are colorful, intelligent birds known for their ability to mimic human speech. They are social animals and can live for decades with proper care. Parrots need attention, stimulation, and an appropriate diet.",
         "careTips": [
@@ -57,14 +57,14 @@
         "relatedPets": [
             {
                 "name": "Hamster",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Golden_hamster.jpg",
+                "image": "https://d1jyxxz9imt9yb.cloudfront.net/medialib/4122/image/s768x1300/AdobeStock_347974747_438127_reduced.jpg",
                 "description": "Hamsters are small, nocturnal rodents that make great pets for children."
             }
         ]
     },
     {
         "name": "Hamster",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Golden_hamster.jpg",
+        "image": "https://d1jyxxz9imt9yb.cloudfront.net/medialib/4122/image/s768x1300/AdobeStock_347974747_438127_reduced.jpg",
         "category": "Mammal",
         "description": "Hamsters are small, nocturnal rodents that make great pets for children. They are low maintenance but need space to exercise, a proper diet, and a clean living environment.",
         "careTips": [
@@ -78,14 +78,14 @@
         "relatedPets": [
             {
                 "name": "Kangaroo",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/A_red_kangaroo_in_Mount_Margaret.jpg",
+                "image": "https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/wallabies-411548-1280_ver_1.jpg",
                 "description": "Kangaroos are iconic Australian animals known for their powerful hind legs."
             }
         ]
     },
     {
         "name": "Kangaroo",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/A_red_kangaroo_in_Mount_Margaret.jpg",
+        "image": "https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/wallabies-411548-1280_ver_1.jpg",
         "category": "Mammal",
         "description": "Kangaroos are iconic Australian animals known for their powerful hind legs and unique hopping movement. They are herbivores and live in the wild, often in open grasslands or forested areas.",
         "careTips": [
@@ -99,14 +99,14 @@
         "relatedPets": [
             {
                 "name": "Elephant",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/African_Bush_Elephant_in_Kruger_National_Park.jpg",
+                "image": "https://elephantconservation.org/wp-content/uploads/2022/05/AboutElephant-Savanna.jpg",
                 "description": "Elephants are the largest land animals, known for their intelligence, social structures, and environmental importance."
             }
         ]
     },
     {
         "name": "Elephant",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/African_Bush_Elephant_in_Kruger_National_Park.jpg",
+        "image": "https://elephantconservation.org/wp-content/uploads/2022/05/AboutElephant-Savanna.jpg",
         "category": "Mammal",
         "description": "Elephants are the largest land animals, known for their intelligence, social structures, and importance in their ecosystems. They are herbivores and require vast amounts of food and space.",
         "careTips": [
@@ -120,14 +120,14 @@
         "relatedPets": [
             {
                 "name": "Lion",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Lion_in_Ranthambhore_National_Park.jpg",
+                "image": "https://cdn.britannica.com/30/150930-120-D3D93F1E/lion-Namibia.jpg",
                 "description": "Lions are apex predators and live in groups called prides."
             }
         ]
     },
     {
         "name": "Lion",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Lion_in_Ranthambhore_National_Park.jpg",
+        "image": "https://cdn.britannica.com/30/150930-120-D3D93F1E/lion-Namibia.jpg",
         "category": "Mammal",
         "description": "Lions are known as the kings of the jungle. They are powerful apex predators and have an important role in the ecosystem. Lions are social animals that live in groups called prides.",
         "careTips": [
@@ -141,14 +141,14 @@
         "relatedPets": [
             {
                 "name": "Penguin",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/African_penguin.jpg",
+                "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/612763581/900",
                 "description": "Penguins are flightless birds that are well adapted to life in the water."
             }
         ]
     },
     {
         "name": "Penguin",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/African_penguin.jpg",
+        "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/612763581/900",
         "category": "Bird",
         "description": "Penguins are flightless birds that are well adapted to life in the water. They are known for their playful nature.",
         "careTips": [
@@ -162,14 +162,14 @@
         "relatedPets": [
             {
                 "name": "Tiger",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Tiger_in_Ranthambhore.jpg",
+                "image": "https://cdn.britannica.com/83/195983-138-66807699/numbers-tiger-populations.jpg?w=800&h=450&c=crop",
                 "description": "Tigers are apex predators known for their distinctive orange coat with black stripes."
             }
         ]
     },
     {
         "name": "Tiger",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Tiger_in_Ranthambhore.jpg",
+        "image": "https://cdn.britannica.com/83/195983-138-66807699/numbers-tiger-populations.jpg?w=800&h=450&c=crop",
         "category": "Mammal",
         "description": "Tigers are apex predators, known for their distinctive orange coat with black stripes. They have large territories and are solitary by nature, requiring a spacious environment to thrive.",
         "careTips": [
@@ -183,14 +183,14 @@
         "relatedPets": [
             {
                 "name": "Tortoise",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+                "image": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Giant_Tortoise/hero_small/1cylh0cts4_Medium_WW288394.jpg",
                 "description": "Tortoises are slow-moving reptiles with hard, protective shells."
             }
         ]
     },
     {
         "name": "Tortoise",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+        "image": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Giant_Tortoise/hero_small/1cylh0cts4_Medium_WW288394.jpg",
         "category": "Reptile",
         "description": "Tortoises are slow-moving reptiles known for their hard, protective shells. They are among the longest-living animals on the planet, with some species living to be over 100 years old. Tortoises are primarily herbivores and require a warm habitat with plenty of space to roam.",
         "careTips": [
@@ -204,14 +204,14 @@
         "relatedPets": [
             {
                 "name": "Frog",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Green_tree_frog_%28Hyla_viridissima%29.jpg",
+                "image": "https://cdn.britannica.com/72/45872-004-8FBD2FE1/Green-frog.jpg",
                 "description": "Frogs are amphibians known for their jumping abilities, vocal calls, and moist skin."
             }
         ]
     },
     {
         "name": "Frog",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/3/34/Green_tree_frog_%28Hyla_viridissima%29.jpg",
+        "image": "https://cdn.britannica.com/72/45872-004-8FBD2FE1/Green-frog.jpg",
         "category": "Amphibian",
         "description": "Frogs are amphibians known for their jumping abilities, vocal calls, and moist skin. They play a critical role in ecosystems by controlling insect populations and serving as food for other animals. Frogs are found in a variety of habitats, from forests to wetlands.",
         "careTips": [
@@ -225,7 +225,7 @@
         "relatedPets": [
             {
                 "name": "Tortoise",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Angulate_tortoise.jpg",
+                "image": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Giant_Tortoise/hero_small/1cylh0cts4_Medium_WW288394.jpg",
                 "description": "Tortoises are slow-moving reptiles with hard, protective shells."
             }
         ]

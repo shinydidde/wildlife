@@ -1,7 +1,5 @@
-// src/pages/animal/[id].tsx
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -32,10 +30,12 @@ const AnimalDetail: React.FC = () => {
     const taxonomicSubGroupStr = typeof animal.taxonomicSubGroup === 'string' ? animal.taxonomicSubGroup : '';
     const imageUrlStr = typeof animal.imageUrl === 'string' ? animal.imageUrl : '';
 
-    // Generate the Wikipedia URL
+    // Fix for replacing spaces and ensuring consistent formatting for Wikipedia URL
     const formattedCommonName = commonNameStr
+        .toLowerCase() // Make the string lowercase to avoid inconsistent casing issues
         .replace(/ /g, "_") // Replace spaces with underscores
-        .replace(/’/g, "'"); // Replace typographic apostrophe with standard apostrophe
+        .replace(/’/g, "'") // Replace typographic apostrophe with standard apostrophe
+        .replace(/_/g, "_"); // Ensure there are no extra underscores
 
     const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(formattedCommonName)}`;
 
