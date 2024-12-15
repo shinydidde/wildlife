@@ -163,6 +163,8 @@ const Home = () => {
                 <meta name="twitter:title" content="Animal Atlas" />
                 <meta name="twitter:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
                 <meta name="twitter:image" content="/logo-colorful.png" />
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
             </Head>
 
             <div className="lg:min-h-screen flex flex-col">

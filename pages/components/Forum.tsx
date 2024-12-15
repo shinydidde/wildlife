@@ -1,157 +1,161 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../firebase/firebaseConfig';
+import { collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc } from 'firebase/firestore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+
+// Censored words array (example, can be expanded)
+const censoredWords = ['badword1', 'badword2', 'offensiveword'];
+
+interface ForumPost {
+    id: string;
+    username: string;
+    message: string;
+    timestamp: string;
+    likeCount: number;
+    dislikeCount: number;
+}
 
 const Forum: React.FC = () => {
-    const [posts, setPosts] = useState<{ id: number; content: string; user: string; likes: number; dislikes: number; avatar: string; replies: string[] }[]>([]);
-    const [newPost, setNewPost] = useState("");
-    const [searchTerm, setSearchTerm] = useState("");
-    const [newReply, setNewReply] = useState("");
+    const [posts, setPosts] = useState<ForumPost[]>([]);
+    const [newPost, setNewPost] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
+    const [filter, setFilter] = useState<string>(''); // Search filter for posts
 
-    const handlePostSubmit = () => {
-        if (newPost.trim()) {
-            const newPostData = {
-                id: posts.length + 1,
-                content: newPost,
-                user: 'User', // Placeholder user
-                likes: 0,
-                dislikes: 0,
-                avatar: 'https://randomuser.me/api/portraits/men/1.jpg', // Placeholder avatar
-                replies: [],
-            };
-            setPosts([...posts, newPostData]);
-            setNewPost("");
+    useEffect(() => {
+        // Fetch forum posts from Firestore
+        const q = query(collection(db, 'posts'), orderBy('timestamp', 'desc'));
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            const postsArray: ForumPost[] = [];
+            querySnapshot.forEach((doc) => {
+                postsArray.push({
+                    id: doc.id,
+                    username: doc.data().username,
+                    message: doc.data().message,
+                    timestamp: doc.data().timestamp,
+                    likeCount: doc.data().likeCount || 0,
+                    dislikeCount: doc.data().dislikeCount || 0
+                });
+            });
+            setPosts(postsArray);
+        });
+
+        return () => unsubscribe(); // Clean up the listener
+    }, []);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // Filter out censored words
+        let filteredPost = newPost;
+        censoredWords.forEach((word) => {
+            filteredPost = filteredPost.replace(new RegExp(`\\b${word}\\b`, 'gi'), '***'); // Replacing the bad words
+        });
+
+        // Add new post to Firebase if no offensive words
+        if (filteredPost.trim() !== '' && username.trim() !== '') {
+            await addDoc(collection(db, 'posts'), {
+                username: username,
+                message: filteredPost,
+                timestamp: new Date().toISOString(),
+                likeCount: 0,
+                dislikeCount: 0
+            });
+            setNewPost('');
         }
     };
 
-    const handleLike = (postId: number) => {
-        setPosts(posts.map(post =>
-            post.id === postId ? { ...post, likes: post.likes + 1 } : post
-        ));
+    const handleLike = async (postId: string, currentLikes: number) => {
+        const postRef = doc(db, 'posts', postId);
+        await updateDoc(postRef, { likeCount: currentLikes + 1 });
     };
 
-    const handleDislike = (postId: number) => {
-        setPosts(posts.map(post =>
-            post.id === postId ? { ...post, dislikes: post.dislikes + 1 } : post
-        ));
+    const handleDislike = async (postId: string, currentDislikes: number) => {
+        const postRef = doc(db, 'posts', postId);
+        await updateDoc(postRef, { dislikeCount: currentDislikes + 1 });
     };
 
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const handleReplySubmit = (postId: number) => {
-        if (newReply.trim()) {
-            const updatedPosts = posts.map(post =>
-                post.id === postId
-                ? { ...post, replies: [...post.replies, newReply] }
-                : post
-            );
-            setPosts(updatedPosts);
-            setNewReply("");
-        }
-    };
-
-    const filteredPosts = posts.filter(post =>
-        post.content.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredPosts = posts.filter((post) => {
+        return post.message.toLowerCase().includes(filter.toLowerCase()) || post.username.toLowerCase().includes(filter.toLowerCase());
+    });
 
     return (
-        <div className="p-6 bg-white rounded-lg shadow-lg">
-            {/* Search bar */}
-            <div className="mb-4 flex items-center">
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={handleSearch}
-                    placeholder="Search posts..."
-                    className="border p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-            </div>
+        <div className="forum-container flex justify-center mt-8 px-4 sm:px-8">
+            <div className="flex flex-col sm:flex-row w-full max-w-screen-lg space-y-8 sm:space-y-0 sm:space-x-8">
 
-            <h2 className="text-3xl font-bold text-center mb-6">Wildlife Discussion Forum</h2>
+                {/* Form Section */}
+                <div className="w-full sm:w-1/3 bg-white shadow-lg rounded-lg p-8">
+                    <h2 className="text-2xl font-bold text-center mb-6">Post Your Thoughts</h2>
 
-            {/* Create a new post */}
-            <div className="mb-6">
-                <textarea
-                    value={newPost}
-                    onChange={(e) => setNewPost(e.target.value)}
-                    placeholder="Share your thoughts..."
-                    className="border p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    rows={4}
-                />
-                <button
-                    onClick={handlePostSubmit}
-                    className="bg-green-900 text-white px-4 py-2 rounded-lg mt-4 hover:bg-green-700 transition duration-300"
-                >
-                    Post
-                </button>
-            </div>
-
-            {/* Posts display */}
-            <div>
-                {filteredPosts.length > 0 ? (
-                    filteredPosts.map((post) => (
-                        <div key={post.id} className="border-b py-4 flex justify-between items-start hover:bg-gray-100 transition-all duration-300">
-                            <div className="flex-1">
-                                <div className="flex items-center space-x-3">
-                                    <img src={post.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
-                                    <div>
-                                        <div className="font-semibold text-blue-700">{post.user}</div>
-                                        <div className="text-gray-700">{post.content}</div>
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-between mt-2 text-gray-500">
-                                    <div>
-                                        <button
-                                            onClick={() => handleLike(post.id)}
-                                            className="text-green-500 hover:text-green-600 px-2 py-1 transition duration-200"
-                                        >
-                                            👍 {post.likes}
-                                        </button>
-                                        <button
-                                            onClick={() => handleDislike(post.id)}
-                                            className="text-red-500 hover:text-red-600 px-2 py-1 transition duration-200"
-                                        >
-                                            👎 {post.dislikes}
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <button
-                                            onClick={() => handleReplySubmit(post.id)}
-                                            className="text-blue-500 hover:text-blue-600 px-2 py-1 transition duration-200"
-                                        >
-                                            Reply
-                                        </button>
-                                    </div>
-                                </div>
-
-                                {/* Replies section */}
-                                {post.replies.length > 0 && (
-                                    <div className="mt-4">
-                                        <h3 className="font-semibold text-gray-800">Replies:</h3>
-                                        {post.replies.map((reply, index) => (
-                                            <div key={index} className="ml-6 mt-2 text-gray-700">
-                                                {reply}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-
-                                {/* Add a reply */}
-                                <div className="mt-4">
-                                    <input
-                                        type="text"
-                                        value={newReply}
-                                        onChange={(e) => setNewReply(e.target.value)}
-                                        placeholder="Add a reply..."
-                                        className="border p-2 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    />
-                                </div>
-                            </div>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="mb-4">
+                            <input
+                                type="text"
+                                placeholder="Enter your name"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                className="border p-3 rounded w-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
                         </div>
-                    ))
-                ) : (
-                    <div className="text-center text-gray-500">No posts found</div>
-                )}
+                        <div className="mb-4">
+                            <textarea
+                                placeholder="Type your post here..."
+                                value={newPost}
+                                onChange={(e) => setNewPost(e.target.value)}
+                                className="border p-3 rounded w-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                rows={5}
+                            />
+                        </div>
+                        <button type="submit" className="bg-blue-600 text-white px-6 py-3 rounded w-full transition duration-300 hover:bg-blue-500">
+                            Post
+                        </button>
+                    </form>
+                </div>
+
+                {/* Posts Section */}
+                <div className="w-full sm:w-2/3 bg-white shadow-lg rounded-lg p-8 overflow-y-auto max-h-[500px] sm:h-auto">
+                    {/* Search Filter */}
+                    <input
+                        type="text"
+                        placeholder="Search posts..."
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                        className="border p-3 rounded w-full mb-6 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+
+                    <div className="space-y-6">
+                        {filteredPosts.length > 0 ? (
+                            filteredPosts.map((post) => (
+                                <div key={post.id} className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                    <div className="flex justify-between items-center font-bold text-lg text-gray-800">
+                                        <span>{post.username}</span>
+                                        <div className="flex space-x-2">
+                                            <button
+                                                onClick={() => handleLike(post.id, post.likeCount)}
+                                                className="bg-green-600 text-white px-2 py-1 rounded transition-all duration-300 hover:bg-green-500"
+                                            >
+                                                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+                                                <span className="ml-1">{post.likeCount}</span>
+                                            </button>
+                                            <button
+                                                onClick={() => handleDislike(post.id, post.dislikeCount)}
+                                                className="bg-red-600 text-white px-2 py-1 rounded transition-all duration-300 hover:bg-red-500"
+                                            >
+                                                <FontAwesomeIcon icon={faThumbsDown} size="lg" />
+                                                <span className="ml-1">{post.dislikeCount}</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="text-gray-600 my-4">{post.message}</div>
+                                    <div className="text-xs text-gray-500">{new Date(post.timestamp).toLocaleString()}</div>
+                                </div>
+                            ))
+                        ) : (
+                            <div>No posts yet.</div>
+                        )}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

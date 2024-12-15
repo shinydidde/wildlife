@@ -26,9 +26,8 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
 
   return (
     <header
-      className={`fixed w-full top-0 left-0 right-0 transition-all duration-300 ease-in-out z-50 ${
-        scrolling ? 'bg-green-900 shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed w-full top-0 left-0 right-0 transition-all duration-300 ease-in-out z-50 ${scrolling ? 'bg-green-900 shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
@@ -53,12 +52,6 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
           >
             About
-          </Link>
-          <Link
-            href="/wildlife"
-            className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
-          >
-            Wildlife
           </Link>
           <Link
             href="/pets"
@@ -87,46 +80,40 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute left-0 w-full bg-white top-full mt-2 p-4 rounded-lg shadow-lg`}
+        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute left-0 w-full bg-secondary top-full mt-2 p-4 rounded-lg shadow-lg`}
       >
-        <nav className="space-y-4">
+        <nav className="space-y-4"> {/* space-y-4 creates vertical spacing between the links */}
           <Link
             href="/"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
+            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`} // Added block to ensure the link takes up full width
             onClick={() => setIsMenuOpen(false)} // Close menu on link click
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
+            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
-            href="/wildlife"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Wildlife
-          </Link>
-          <Link
             href="/pets"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
+            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
             onClick={() => setIsMenuOpen(false)}
           >
             Pets
           </Link>
           <Link
             href="/contact-us"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300`}
+            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </Link>
         </nav>
       </div>
+
     </header>
   );
 };
