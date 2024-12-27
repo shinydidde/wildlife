@@ -19,7 +19,6 @@ const AnimalCard: React.FC<{ animal: Animal }> = ({ animal }) => {
         localStorage.setItem('animalDetails', JSON.stringify(animal)); // Save to local storage
     };
 
-    // Handle case where animal is undefined
     if (!animal) {
         return (
             <div className="min-h-screen flex items-center justify-center">
@@ -30,28 +29,29 @@ const AnimalCard: React.FC<{ animal: Animal }> = ({ animal }) => {
 
     return (
         <Link href="/animal/[id]" as={`/animal/${animal._id}`} onClick={handleCardClick}>
-            <div className="shadow-lg hover:shadow-2xl transition-transform transform hover:scale-105 rounded-lg m-2 w-64 flex flex-col h-full">
+            <div className="shadow-md hover:shadow-lg transition-all transform hover:scale-105 rounded-lg overflow-hidden bg-white border border-gray-200 flex flex-col h-full w-64">
                 {/* Image */}
-                <img
-                    src={imageUrl}
-                    alt={animal.commonName}
-                    className="rounded-t-lg h-48 w-full object-cover object-center"
-                />
+                <div className="h-40 bg-gray-100">
+                    <img
+                        src={imageUrl}
+                        alt={animal.commonName}
+                        className="h-full w-full object-center"
+                    />
+                </div>
                 {/* Content */}
-                <div className="flex-grow flex flex-col p-4 justify-between rounded-b-lg">
-                    <h2 className="text-2xl font-bold text-center text-green-800">{animal.commonName}</h2>
-                    <h3 className="text-lg font-medium text-center text-gray-600">
-                        <span className="italic text-gray-400">({animal.scientificName})</span>
-                    </h3>
-
-                    <div className="flex flex-wrap justify-center mt-2">
-                        <span className="bg-green-300 text-green-800 text-xs font-medium mr-2 px-3 py-0.5 rounded-full mb-1">{animal.taxonomicGroup}</span>
-                        <span className="bg-purple-300 text-purple-800 text-xs font-medium mr-2 px-3 py-0.5 rounded-full mb-1">{animal.taxonomicSubGroup}</span>
+                <div className="p-4 flex-grow flex flex-col justify-between">
+                    <div className="flex justify-between mb-3 space-x-2">
+                        <span className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded-full">{animal.taxonomicGroup}</span>
+                        <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded-full">{animal.taxonomicSubGroup}</span>
+                    </div>
+                    <div>
+                        <h2 className="text-lg font-bold text-center text-green-700 truncate">{animal.commonName}</h2>
+                        <h3 className="text-sm text-center text-gray-500 mt-1 italic truncate">({animal.scientificName})</h3>
                     </div>
 
-                    <div className="flex flex-col items-center mt-4">
-                        <div className="text-sm text-gray-600 mb-2">Distribution: {animal.distributionStatus}</div>
-                        <div className="text-sm text-gray-600">Found in: {animal.country}</div>
+                    <div className="mt-3 text-sm text-gray-600 text-center">
+                        <p>Distribution: <span className="font-medium">{animal.distributionStatus}</span></p>
+                        <p>Found in: <span className="font-medium">{animal.country}</span></p>
                     </div>
                 </div>
             </div>

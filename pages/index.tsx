@@ -148,21 +148,21 @@ const Home = () => {
     return (
         <>
             <Head>
-                <title>Animal Atlas</title>
+                <title>Atlas</title>
                 <meta name="description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
 
                 {/* Open Graph Tags */}
-                <meta property="og:title" content="Animal Atlas" />
+                <meta property="og:title" content="Atlas" />
                 <meta property="og:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
-                <meta property="og:image" content="/logo-colorful.png" />
+                <meta property="og:image" content="/globe.svg" />
                 <meta property="og:url" content="https://wildlife-2pl7.onrender.com" />
                 <meta property="og:type" content="website" />
 
                 {/* Twitter Card Tags (optional but recommended) */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Animal Atlas" />
+                <meta name="twitter:title" content="Atlas" />
                 <meta name="twitter:description" content="Explore fascinating animals and their habitats. Join us in learning about wildlife conservation." />
-                <meta name="twitter:image" content="/logo-colorful.png" />
+                <meta name="twitter:image" content="/globe.svg" />
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
             </Head>

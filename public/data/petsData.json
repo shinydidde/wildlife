@@ -1,7 +1,7 @@
 [
     {
         "name": "Dog",
-        "image": "https://www.nativebreed.org/wp-content/uploads/2020/06/American-Eskimo-1.jpeg",
+        "image": "https://img.freepik.com/premium-photo/white-dog-with-pointy-ears-fluffy-coat-white-background_850197-3261.jpg",
         "category": "Mammal",
         "description": "Dogs are loyal pets and are often referred to as man's best friend. They require regular exercise, a balanced diet, and a lot of love. Dogs come in various breeds with different temperaments and needs.",
         "careTips": [
@@ -36,7 +36,7 @@
         "relatedPets": [
             {
                 "name": "Dog",
-                "image": "https://www.nativebreed.org/wp-content/uploads/2020/06/American-Eskimo-1.jpeg",
+                "image": "https://img.freepik.com/premium-photo/white-dog-with-pointy-ears-fluffy-coat-white-background_850197-3261.jpg",
                 "description": "Dogs are loyal pets and are often referred to as man's best friend."
             }
         ]
