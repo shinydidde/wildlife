@@ -82,15 +82,15 @@ const Graphs: React.FC = () => {
     return (
         <>
             <Header theme="dark" />
-            <div className="container mx-auto mt-20 p-8 bg-gray-50 rounded-lg shadow-xl">
+            <div className="container mx-auto mt-20 px-4 sm:px-8">
                 <h1 className="text-4xl font-bold text-green-700 text-center mb-8">Wildlife Data Visualization</h1>
 
                 {/* Tab Navigation */}
-                <div className="flex justify-center mb-6">
+                <div className="flex flex-wrap justify-center mb-6 space-x-2 sm:space-x-4">
                     {["category", "conservation", "taxonomic", "distribution"].map((tab) => (
                         <button
                             key={tab}
-                            className={`px-6 py-3 text-lg font-semibold rounded-t-lg ${
+                            className={`px-4 py-2 text-sm sm:text-lg mb-2 font-semibold rounded-lg ${
                                 activeTab === tab ? "bg-green-600 text-white" : "bg-gray-200 text-gray-700"
                             } transition-colors duration-300`}
                             onClick={() => setActiveTab(tab)}
@@ -104,42 +104,42 @@ const Graphs: React.FC = () => {
                 </div>
 
                 {/* Tab Content */}
-                <div className="p-6 bg-white rounded-lg shadow-lg">
+                <div className="bg-white rounded-lg shadow-lg p-6">
                     {activeTab === "category" && (
-                        <>
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Animals Count by Category</h2>
-                            <p className="mb-4 text-gray-600">
+                        <div className="space-y-4">
+                            <h2 className="text-xl font-semibold text-gray-800">Animals Count by Category</h2>
+                            <p className="text-gray-600">
                                 This bar graph shows the distribution of animals across various categories, highlighting the richness and diversity of wildlife species.
                             </p>
                             <Bar data={categoryChartData} options={{ responsive: true, plugins: { title: { display: true, text: "Number of Animals by Category" } } }} />
-                        </>
+                        </div>
                     )}
                     {activeTab === "conservation" && (
-                        <>
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Conservation Status Overview</h2>
-                            <p className="mb-4 text-gray-600">
+                        <div className="space-y-4">
+                            <h2 className="text-xl font-semibold text-gray-800">Conservation Status Overview</h2>
+                            <p className="text-gray-600">
                                 The pie chart depicts the conservation status of animals, emphasizing their current ecological risks and vulnerabilities.
                             </p>
                             <Pie data={conservationChartData} options={{ responsive: true }} />
-                        </>
+                        </div>
                     )}
                     {activeTab === "taxonomic" && (
-                        <>
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Animals by Taxonomic Group</h2>
-                            <p className="mb-4 text-gray-600">
+                        <div className="space-y-4">
+                            <h2 className="text-xl font-semibold text-gray-800">Animals by Taxonomic Group</h2>
+                            <p className="text-gray-600">
                                 This bar graph categorizes animals based on their taxonomic groups, showcasing their evolutionary relationships.
                             </p>
                             <Bar data={taxonomicGroupChartData} options={{ responsive: true }} />
-                        </>
+                        </div>
                     )}
                     {activeTab === "distribution" && (
-                        <>
-                            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Animal Distribution</h2>
-                            <p className="mb-4 text-gray-600">
+                        <div className="space-y-4">
+                            <h2 className="text-xl font-semibold text-gray-800">Animal Distribution</h2>
+                            <p className="text-gray-600">
                                 The pie chart displays the geographical distribution of animals, providing insights into habitat preferences and range.
                             </p>
                             <Pie data={distributionPieChartData} options={{ responsive: true }} />
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
