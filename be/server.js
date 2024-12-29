@@ -17,6 +17,9 @@ app.use(cors({
 const animalRoutes = require('./routes/animalRoutes');
 app.use('/api/animals', animalRoutes);
 
+const sanctuaryRoutes = require('./routes/sanctuaryRoutes');
+app.use('/api/sanctuaries', sanctuaryRoutes);
+
 // Connection options
 const options = {
     useNewUrlParser: true,

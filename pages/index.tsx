@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AnimalCard from './components/AnimalCard';
@@ -51,6 +51,11 @@ const Home = () => {
     // Pagination state
     const [currentPage, setCurrentPage] = useState<number>(1);
     const itemsPerPage = 20;
+    const animalsSectionRef = useRef<HTMLDivElement>(null);
+
+    const scrollToAnimalsSection = () => {
+        animalsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
     useEffect(() => {
         const savedCategory = localStorage.getItem('selectedCategory');
@@ -167,13 +172,19 @@ const Home = () => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
             </Head>
 
-            <div className="lg:min-h-screen flex flex-col">
+            <div className="bg-gray-50 flex flex-col min-h-screen">
                 <Header />
-                <div className="relative bg-cover bg-center h-[90vh]" style={{ backgroundImage: `url('https://images4.alphacoders.com/134/1345397.png')` }}>
-                    <div className="absolute inset-0 bg-opacity-40 bg-green-800 flex flex-col justify-center items-center text-white">
-                        <h1 className="text-5xl font-extrabold">WILDLIFE</h1>
-                        <p className="text-lg text-center mt-4">We love nature. Fight for the rights of wildlife.</p>
-                        <button className="mt-6 px-8 py-2 bg-white text-green-800 font-bold rounded-full">SEE MORE</button>
+                <div
+                    className="relative bg-cover bg-fixed bg-center h-[100vh]"
+                    style={{ backgroundImage: `url('https://images4.alphacoders.com/134/1345397.png')` }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-b from-green-700 via-green-800 to-transparent flex flex-col justify-center items-center text-white space-y-4">
+                        <h1 className="text-6xl font-bold tracking-wide">Wildlife Atlas</h1>
+                        <p className="text-xl max-w-3xl text-center px-6">Discover the majesty of nature and learn about the incredible creatures that share our planet.</p>
+                        <button className="mt-6 px-8 py-3 bg-white text-green-700 font-bold rounded-full hover:bg-green-600 hover:text-white shadow-lg"
+                         onClick={scrollToAnimalsSection} disabled={loading}>
+                            Explore More
+                        </button>
                     </div>
                 </div>
 
@@ -184,7 +195,7 @@ const Home = () => {
                         </div>
                     ) : (
                         <>
-                            <div className="flex flex-col lg:flex-row mb-6 items-center justify-between">
+                            <div ref={animalsSectionRef} className="flex flex-col lg:flex-row mb-6 items-center justify-between">
                                 <input
                                     type="text"
                                     placeholder="Search for an animal..."
@@ -232,7 +243,7 @@ const Home = () => {
                                         className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'}`}
                                         onClick={() => handleCategorySelect(category)}
                                     >
-                                        <div className="flex justify-center items-center border border-gray-300 h-28 w-full rounded-lg">
+                                        <div className="flex justify-center items-center border border-gray-300 h-28 w-full rounded-lg bg-white">
                                             <div className="text-green-900 mb-2">
                                                 {categoryIcons[category]}
                                             </div>
