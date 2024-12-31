@@ -178,8 +178,8 @@ const Home = () => {
                     className="relative bg-cover bg-fixed bg-center h-[100vh]"
                     style={{ backgroundImage: `url('https://images4.alphacoders.com/134/1345397.png')` }}
                 >
-                    <div className="absolute inset-0 bg-gradient-to-b from-green-700 via-green-800 to-transparent flex flex-col justify-center items-center text-white space-y-4">
-                        <h1 className="text-6xl font-bold tracking-wide">Wildlife Atlas</h1>
+                    <div className="absolute inset-0 bg-gradient-to-b from-green-700/60 via-green-800/30 to-transparent flex flex-col justify-center items-center text-white space-y-4">
+                        <h1 className="text-6xl font-bold tracking-wide text-center">Wildlife Atlas</h1>
                         <p className="text-xl max-w-3xl text-center px-6">Discover the majesty of nature and learn about the incredible creatures that share our planet.</p>
                         <button className="mt-6 px-8 py-3 bg-white text-green-700 font-bold rounded-full hover:bg-green-600 hover:text-white shadow-lg"
                          onClick={scrollToAnimalsSection} disabled={loading}>

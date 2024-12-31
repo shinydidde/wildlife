@@ -54,6 +54,12 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             About
           </Link>
           <Link
+            href="/sanctuaries"
+            className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
+          >
+            Sanctuaries
+          </Link>
+          <Link
             href="/pets"
             className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
           >
@@ -80,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute left-0 w-full bg-secondary top-full mt-2 p-4 rounded-lg shadow-lg`}
+        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} absolute left-0 w-full bg-green-900 top-full p-4 shadow-lg`}
       >
         <nav className="space-y-4"> {/* space-y-4 creates vertical spacing between the links */}
           <Link
@@ -96,6 +102,13 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             onClick={() => setIsMenuOpen(false)}
           >
             About
+          </Link>
+          <Link
+            href="/sanctuaries"
+            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Sanctuaries
           </Link>
           <Link
             href="/pets"
