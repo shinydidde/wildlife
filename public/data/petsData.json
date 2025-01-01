@@ -84,6 +84,146 @@
         ]
     },
     {
+        "name": "Guinea Pig",
+        "image": "https://news.clas.ufl.edu/wp-content/uploads/sites/4/2020/06/AdobeStock_345118478-copy-1440x961-1-e1613512040649.jpg",
+        "category": "Mammal",
+        "description": "Guinea pigs are small, social rodents that are popular pets. They are gentle, easy to care for, and thrive in pairs or small groups.",
+        "careTips": [
+            "Provide a spacious cage with plenty of bedding for burrowing.",
+            "Feed a diet of hay, fresh vegetables, and guinea pig pellets.",
+            "Ensure access to clean water at all times.",
+            "Provide hiding spots to make them feel secure.",
+            "Groom their fur regularly to prevent matting."
+        ],
+        "funFact": "Guinea pigs communicate through a variety of sounds, including 'wheeking' when they are excited or hungry.",
+        "relatedPets": [
+            {
+                "name": "Hamster",
+                "image": "https://d1jyxxz9imt9yb.cloudfront.net/medialib/4122/image/s768x1300/AdobeStock_347974747_438127_reduced.jpg",
+                "description": "Hamsters are small, nocturnal rodents that make great pets for children."
+            }
+        ]
+    },
+    {
+        "name": "Budgerigar",
+        "image": "https://image.petmd.com/files/styles/978x550/public/2023-01/budgies.row_.jpg",
+        "category": "Bird",
+        "description": "Budgerigars, commonly known as budgies or parakeets, are small, colorful birds. They are highly social and can learn to mimic speech with proper training.",
+        "careTips": [
+            "Provide a spacious cage with perches and toys for stimulation.",
+            "Feed a balanced diet of seeds, pellets, and fresh fruits and vegetables.",
+            "Allow out-of-cage time for exercise and social interaction.",
+            "Ensure access to clean water for drinking and bathing.",
+            "Regularly clean their cage to maintain hygiene."
+        ],
+        "funFact": "Budgerigars are capable of mimicking human speech and can learn dozens of words or phrases.",
+        "relatedPets": [
+            {
+                "name": "Parrot",
+                "image": "https://rukminim2.flixcart.com/image/850/1000/l3ahpjk0/poster/q/r/k/small-parrot-birds-poster-birds-poster-poster-animals-poster-for-original-imageg3seznnzhnc.jpeg?q=90&crop=false",
+                "description": "Parrots are intelligent birds known for their vibrant colors and speech mimicry."
+            }
+        ]
+    },
+    {
+        "name": "Ferret",
+        "image": "https://predatorfreenz.org/wp-content/uploads/2021/09/Its-said-comparing-a-pet-ferret-to-a-feral-ferret-is-like-comparing-a-pet-border-collie-to-a-dog_wolf-hybrid.-Image-credit_-Andrew-Linscott.jpg",
+        "category": "Mammal",
+        "description": "Ferrets are playful, curious animals known for their mischievous behavior. They are great companions for those who can dedicate time to interacting with them.",
+        "careTips": [
+            "Provide a spacious cage with tunnels and toys.",
+            "Feed a high-protein diet designed for ferrets.",
+            "Supervise them during out-of-cage playtime to prevent mischief.",
+            "Ensure regular veterinary check-ups to monitor their health.",
+            "Keep them entertained with interactive play and social interaction."
+        ],
+        "funFact": "Ferrets sleep for 14–18 hours a day and are most active during dawn and dusk.",
+        "relatedPets": [
+            {
+                "name": "Rabbit",
+                "image": "https://www.caldervets.co.uk/images/pet-care/rabbits/rabbits-dental-care-for-rabbits-01.jpg",
+                "description": "Rabbits are gentle and social animals known for their long ears and fluffy tails."
+            }
+        ]
+    },
+    {
+        "name": "Goat",
+        "image": "https://concernusa.org/uploads/concern-the-goat-header-2.webp",
+        "category": "Mammal",
+        "description": "Goats are friendly and curious animals that can be kept as pets or livestock. They are known for their ability to climb and their playful nature.",
+        "careTips": [
+            "Provide a large, secure outdoor area with access to shelter.",
+            "Feed a diet of hay, grains, and fresh vegetables.",
+            "Ensure access to clean water at all times.",
+            "Provide climbing structures to satisfy their natural behavior.",
+            "Monitor their hooves and trim them regularly."
+        ],
+        "funFact": "Goats have rectangular pupils, which provide them with a wide field of vision to spot predators."
+    },
+    {
+        "name": "Chicken",
+        "image": "https://www.worldanimalprotection.ca/cdn-cgi/image/width=1280,format=auto/siteassets/shutterstock_1695190498.jpg",
+        "category": "Bird",
+        "description": "Chickens are easy to care for and can provide fresh eggs daily. They are social animals that enjoy foraging and scratching the ground.",
+        "careTips": [
+            "Provide a secure coop with nesting boxes and perches.",
+            "Feed them a diet of grains, pellets, and kitchen scraps.",
+            "Ensure access to clean water and grit for digestion.",
+            "Let them free-range in a safe, predator-free environment.",
+            "Clean their coop regularly to prevent disease."
+        ],
+        "funFact": "Chickens can remember over 100 different faces, including humans.",
+        "relatedPets": [
+            {
+                "name": "Duck",
+                "image": "https://www.kalmbachfeeds.com/cdn/shop/articles/two-white-ducks-in-grass.jpg?v=1706873608",
+                "description": "Ducks are waterfowl known for their waddling walk and quacking sounds."
+            }
+        ]
+    },
+    {
+        "name": "Duck",
+        "image": "https://www.kalmbachfeeds.com/cdn/shop/articles/two-white-ducks-in-grass.jpg?v=1706873608",
+        "category": "Bird",
+        "description": "Ducks are waterfowl known for their friendly nature and ability to adapt to various environments. They are great additions to farms or backyards with a water source.",
+        "careTips": [
+            "Provide a water source like a pond or kiddie pool for swimming.",
+            "Feed a balanced diet of grains, vegetables, and duck feed.",
+            "Ensure access to a secure shelter at night.",
+            "Keep their water clean to prevent infections.",
+            "Offer companionship, as ducks are social animals."
+        ],
+        "funFact": "Ducks have waterproof feathers that help them stay dry while swimming.",
+        "relatedPets": [
+            {
+                "name": "Chicken",
+                "image": "https://www.worldanimalprotection.ca/cdn-cgi/image/width=1280,format=auto/siteassets/shutterstock_1695190498.jpg",
+                "description": "Chickens are social birds that provide fresh eggs and enjoy foraging."
+            }
+        ]
+    },
+    {
+        "name": "Horse",
+        "image": "https://images.squarespace-cdn.com/content/v1/54ab2b97e4b08dbf5e1cb50c/827087ca-536f-472e-a0dc-7662e8d30bd3/how+much+does+a+horse+weigh+%281%29.png",
+        "category": "Mammal",
+        "description": "Horses are strong, majestic animals that have been domesticated for centuries. They are used for riding, work, and companionship.",
+        "careTips": [
+            "Provide a spacious pasture with access to shelter.",
+            "Feed a balanced diet of hay, grains, and fresh water.",
+            "Ensure regular grooming to keep their coat and hooves healthy.",
+            "Provide regular exercise and mental stimulation.",
+            "Schedule routine veterinary and farrier visits."
+        ],
+        "funFact": "Horses can sleep both standing up and lying down.",
+        "relatedPets": [
+            {
+                "name": "Donkey",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Donkey_Kingston_University.jpg",
+                "description": "Donkeys are hardy animals often used as working companions in farms."
+            }
+        ]
+    },
+    {
         "name": "Kangaroo",
         "image": "https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/wallabies-411548-1280_ver_1.jpg",
         "category": "Mammal",
@@ -141,14 +281,14 @@
         "relatedPets": [
             {
                 "name": "Penguin",
-                "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/612763581/900",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQchOWb26cEQfj1JL-XVvOizD5BYDexKZqzPw&s",
                 "description": "Penguins are flightless birds that are well adapted to life in the water."
             }
         ]
     },
     {
         "name": "Penguin",
-        "image": "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/612763581/900",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQchOWb26cEQfj1JL-XVvOizD5BYDexKZqzPw&s",
         "category": "Bird",
         "description": "Penguins are flightless birds that are well adapted to life in the water. They are known for their playful nature.",
         "careTips": [
@@ -229,6 +369,145 @@
                 "description": "Tortoises are slow-moving reptiles with hard, protective shells."
             }
         ]
+    },
+    {
+        "name": "Panda",
+        "image": "https://www.naturesafariindia.com/wp-content/uploads/2022/03/Giant-Panda.jpg",
+        "category": "Mammal",
+        "description": "Pandas are known for their distinct black-and-white coat and gentle temperament. Native to China, pandas primarily eat bamboo and are considered a symbol of conservation efforts.",
+        "careTips": [
+            "Provide a diet rich in bamboo and occasional fruits.",
+            "Ensure a safe and natural enclosure with trees and shade.",
+            "Monitor their health regularly for any signs of distress or illness.",
+            "Provide an environment that mimics their natural habitat.",
+            "Offer opportunities for climbing and exploration."
+        ],
+        "funFact": "A panda's diet consists almost entirely of bamboo, and they can eat up to 26–84 pounds of bamboo daily!",
+        "relatedPets": [
+            {
+                "name": "Koala",
+                "image": "https://d1jyxxz9imt9yb.cloudfront.net/article/5080/meta_image/regular/DR_2020-01-18_Koroit-Victoria-AU_Bushfires-MosswoodWildlife-RescuedKoalas_1D_MelanieMahoney_094V1077_reduced.jpg",
+                "description": "Koalas are marsupials native to Australia, known for their eucalyptus diet and sleepy nature."
+            }
+        ]
+    },
+    {
+        "name": "Koala",
+        "image": "https://d1jyxxz9imt9yb.cloudfront.net/article/5080/meta_image/regular/DR_2020-01-18_Koroit-Victoria-AU_Bushfires-MosswoodWildlife-RescuedKoalas_1D_MelanieMahoney_094V1077_reduced.jpg",
+        "category": "Mammal",
+        "description": "Koalas are marsupials native to Australia. They spend most of their time sleeping in eucalyptus trees and are known for their distinctive fluffy ears and nose.",
+        "careTips": [
+            "Provide fresh eucalyptus leaves daily for nutrition.",
+            "Ensure their environment includes trees for climbing and resting.",
+            "Maintain a calm, quiet environment to prevent stress.",
+            "Monitor for signs of illness, particularly chlamydia, which is common in koalas.",
+            "Provide a comfortable space for them to sleep, as they sleep up to 18–20 hours a day."
+        ],
+        "funFact": "Koalas have fingerprints that are nearly indistinguishable from human fingerprints.",
+        "relatedPets": [
+            {
+                "name": "Panda",
+                "image": "https://www.naturesafariindia.com/wp-content/uploads/2022/03/Giant-Panda.jpg",
+                "description": "Pandas are gentle giants known for their love of bamboo and their unique black-and-white fur."
+            }
+        ]
+    },
+    {
+        "name": "Dolphin",
+        "image": "https://cdn.sanity.io/images/esqfj3od/production/7e16007f7cc9917ad1bc9c83cc039cdcbd93206e-563x375.webp?w=1200&q=65&fit=clip&auto=format",
+        "category": "Marine Mammal",
+        "description": "Dolphins are highly intelligent marine mammals known for their playful behavior and ability to communicate using clicks and whistles. They are social animals that live in groups called pods.",
+        "careTips": [
+            "Ensure a large, clean water habitat with plenty of space for swimming.",
+            "Provide a diet of fresh fish and squid.",
+            "Encourage social interaction with other dolphins.",
+            "Offer mental stimulation through toys and training.",
+            "Regularly monitor water quality and their overall health."
+        ],
+        "funFact": "Dolphins have been observed teaching each other new skills, such as using tools or hunting techniques.",
+        "relatedPets": [
+            {
+                "name": "Seal",
+                "image": "https://res.cloudinary.com/enchanting/q_70,f_auto,w_1024,h_684,c_fit/quark-web/2024/09/AdobeStock_144122226.jpeg",
+                "description": "Seals are marine mammals that are excellent swimmers and spend most of their lives in the ocean."
+            }
+        ]
+    },
+    {
+        "name": "Seal",
+        "image": "https://res.cloudinary.com/enchanting/q_70,f_auto,w_1024,h_684,c_fit/quark-web/2024/09/AdobeStock_144122226.jpeg",
+        "category": "Marine Mammal",
+        "description": "Seals are marine mammals that live along coastlines. They are agile swimmers and are known for their playful nature and distinctive flippers.",
+        "careTips": [
+            "Provide a saltwater habitat with space for swimming and sunbathing.",
+            "Feed them a diet of fresh fish, squid, and shellfish.",
+            "Ensure they have a safe environment to haul out and rest.",
+            "Monitor their health for signs of parasites or infections.",
+            "Offer environmental enrichment to keep them active."
+        ],
+        "funFact": "Seals can hold their breath for up to two hours while diving underwater.",
+        "relatedPets": [
+            {
+                "name": "Dolphin",
+                "image": "https://cdn.sanity.io/images/esqfj3od/production/7e16007f7cc9917ad1bc9c83cc039cdcbd93206e-563x375.webp?w=1200&q=65&fit=clip&auto=format",
+                "description": "Dolphins are highly intelligent marine mammals known for their social behavior and communication skills."
+            }
+        ]
+    },
+    {
+        "name": "Polar Bear",
+        "image": "https://www.photonews.ca/wp-content/uploads/2024/06/24.jpg",
+        "category": "Mammal",
+        "description": "Polar bears are powerful predators that live in the Arctic. They rely on sea ice to hunt seals and are well-adapted to their cold environment with thick fur and a layer of fat.",
+        "careTips": [
+            "Provide a cold environment with access to water for swimming.",
+            "Feed them a high-protein diet, including fish and meat.",
+            "Ensure plenty of space for roaming and climbing.",
+            "Provide environmental enrichment to keep them mentally stimulated.",
+            "Monitor their health regularly, as they are prone to stress in captivity."
+        ],
+        "funFact": "Polar bears have black skin under their white fur to absorb and retain heat."
+    },
+    {
+        "name": "Peacock",
+        "image": "https://images.indianexpress.com/2023/08/peacock-2.jpg",
+        "category": "Bird",
+        "description": "Peacocks are large, colorful birds known for their dazzling tail feathers, which are used in courtship displays. They are native to South Asia and thrive in a variety of habitats.",
+        "careTips": [
+            "Provide a safe and spacious enclosure with roosting areas.",
+            "Feed them grains, seeds, and fresh greens.",
+            "Ensure clean water for drinking and bathing.",
+            "Protect them from predators with secure fencing.",
+            "Offer opportunities for social interaction, as they are social birds."
+        ],
+        "funFact": "Only male peacocks have the vibrant tail feathers; females are called peahens and have more subdued plumage."
+    },
+    {
+        "name": "Goldfish",
+        "image": "https://i.pinimg.com/736x/c8/ea/a1/c8eaa19e59eb9cc86de0698bcae9f3b6.jpg",
+        "category": "Fish",
+        "description": "Goldfish are popular freshwater fish known for their bright colors and easy maintenance. They make great starter pets for beginners.",
+        "careTips": [
+            "Provide a clean tank with proper filtration and regular water changes.",
+            "Feed them high-quality fish flakes and occasional treats like brine shrimp.",
+            "Avoid overcrowding the tank; provide adequate space for swimming.",
+            "Maintain water at the appropriate temperature for goldfish.",
+            "Monitor their health for signs of illness, such as changes in behavior or fin rot."
+        ],
+        "funFact": "Goldfish have a memory span of about three months and can recognize their owners."
+    },
+    {
+        "name": "Rabbit",
+        "image": "https://www.caldervets.co.uk/images/pet-care/rabbits/rabbits-dental-care-for-rabbits-01.jpg",
+        "category": "Mammal",
+        "description": "Rabbits are gentle and social animals known for their long ears and fluffy tails. They are herbivores and thrive in environments with space to hop and explore.",
+        "careTips": [
+            "Provide a safe and spacious enclosure with hiding spots.",
+            "Feed a diet of hay, fresh vegetables, and rabbit pellets.",
+            "Ensure access to fresh water at all times.",
+            "Provide toys and tunnels for mental stimulation.",
+            "Regularly trim their nails and monitor their teeth for overgrowth."
+        ],
+        "funFact": "Rabbits can jump as high as 3 feet and run up to 35 mph when startled."
     }
-
 ]

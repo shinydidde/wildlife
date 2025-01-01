@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'; // Import useRouter
+import { useRouter } from 'next/router';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import StatsCard from './components/StatsCard';
 
 // Define the Pet type
 interface Pet {
@@ -14,15 +15,20 @@ interface Pet {
 }
 
 const PetToWildlifePage = () => {
-    const router = useRouter(); // Initialize router
-    const [pets, setPets] = useState<Pet[]>([]); // Use Pet[] instead of any[]
+    const router = useRouter();
+    const [pets, setPets] = useState<Pet[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState<string>('');
+    const stats = [
+        { title: 'Pets Cared For', value: '1,200+', description: 'Responsible pet owners educated.' },
+        { title: 'Species Covered', value: '300+', description: 'Wildlife species listed in our database.' },
+        { title: 'Conservation Projects', value: '50+', description: 'Active wildlife projects supported.' }
+    ];
 
     useEffect(() => {
         // Fetch data from the petsData.json file
         const fetchPetsData = async () => {
-            const res = await fetch('/data/petsData.json'); // Adjust the path as needed
+            const res = await fetch('/data/petsData.json');
             const data: Pet[] = await res.json();
             setPets(data);
         };
@@ -34,70 +40,57 @@ const PetToWildlifePage = () => {
         setSelectedCategory(category);
     };
 
-    const filteredPets = pets.filter(pet => pet.category.includes(selectedCategory || ''));
+    const filteredPets = pets.filter(pet =>
+        pet.category.includes(selectedCategory || '') &&
+        pet.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
-        <div className="min-h-screen flex flex-col">
-            <Header theme="dark" />
-            <div className="container mx-auto mt-32 px-4">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold text-green-600">Understanding Animal Care: From Pets to Wildlife</h2>
-                    <p className="text-xl mt-4 text-gray-700">
-                        Learn how caring for domestic pets can help you understand wildlife conservation and how both are interconnected.
+        <div className="min-h-screen flex flex-col bg-primary">
+            <Header theme="light" />
+
+            {/* Hero Section */}
+            <div className="relative bg-gradient-to-r from-green-500 to-green-700 text-white py-20 px-6">
+                <div className="container mx-auto text-center">
+                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6">From Pets to Wildlife Conservation</h1>
+                    <p className="text-lg md:text-xl max-w-2xl mx-auto">
+                        Discover how caring for pets can teach us valuable lessons about protecting and conserving wildlife.
                     </p>
                 </div>
 
-                {/* Introduction Section */}
-                <div className="text-center my-8">
-                    <h3 className="text-2xl font-semibold text-green-600">Domestic Life Education & Wildlife Conservation</h3>
-                    <p className="mt-4 text-lg text-gray-600">
-                        Caring for pets responsibly helps in understanding the impact we have on the environment and wildlife. Learn how adopting good practices with domestic animals can lead to wildlife awareness.
-                    </p>
-                </div>
+            </div>
 
-                {/* Pet Care Section */}
-                <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h4 className="text-xl font-semibold text-green-600">Pet Care Basics</h4>
-                    <p className="text-gray-600 mt-4">
-                        Starting with understanding how to care for domestic animals will give you a better perspective on how wildlife needs protection. Here are some key points for responsible pet ownership:
-                    </p>
-                    <ul className="list-disc pl-6 mt-4 text-gray-600">
-                        <li>Provide a proper diet and ensure hydration.</li>
-                        <li>Respect natural behaviors and needs, like space and companionship.</li>
-                        <li>Prevent overpopulation through sterilization and adoption.</li>
-                        <li>Promote sustainable pet products to reduce your environmental footprint.</li>
-                    </ul>
+            {/* Stats Section */}
+            <section className="container mx-auto py-16">
+                <h2 className="text-3xl font-bold text-center mb-10">Why This Matters</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {stats.map((stat, index) => (
+                    <StatsCard
+                        key={index}
+                        title={stat.title}
+                        value={stat.value} // Use `value` instead of `stat`
+                        description={stat.description}
+                    />
+                ))}
                 </div>
+            </section>
 
-                {/* Connecting Pets to Wildlife */}
-                <div className="bg-green-100 rounded-lg shadow-md p-6 mb-8">
-                    <h4 className="text-xl font-semibold text-green-600">From Pets to Wildlife Conservation</h4>
-                    <p className="mt-4 text-lg text-gray-600">
-                        The principles we apply in taking care of pets can also be applied to wildlife. Here’s how you can start making a positive impact:
-                    </p>
-                    <ul className="list-disc pl-6 mt-4 text-gray-600">
-                        <li>Understand the interconnection between domesticated and wild species.</li>
-                        <li>Engage in local wildlife conservation efforts like supporting shelters and protecting habitats.</li>
-                        <li>Educate others about the impact of exotic pet trade on wildlife populations.</li>
-                        <li>Contribute to wildlife sanctuaries and eco-friendly animal conservation programs.</li>
-                    </ul>
-                </div>
-
-                {/* Search Bar and Category Selector */}
-                <div className="mb-6 flex flex-col lg:flex-row items-center justify-between">
+            {/* Pet Categories and Search */}
+            <div className="container mx-auto py-8 px-6">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                     <input
                         type="text"
                         placeholder="Search for a pet..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md"
+                        className="border border-gray-300 rounded-lg p-4 w-full lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                     <select
-                        className="border border-gray-300 rounded-lg p-3 w-full lg:w-1/4 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 shadow-md mt-4 lg:mt-0"
+                        className="border border-gray-300 rounded-lg p-4 w-full lg:w-1/4 focus:outline-none focus:ring-2 focus:ring-green-500"
                         value={selectedCategory || ''}
                         onChange={(e) => handleCategorySelect(e.target.value)}
                     >
-                        <option value="">Select Pet Category</option>
+                        <option value="">All Categories</option>
                         <option value="Mammal">Mammals</option>
                         <option value="Bird">Birds</option>
                         <option value="Reptile">Reptiles</option>
@@ -105,43 +98,43 @@ const PetToWildlifePage = () => {
                     </select>
                 </div>
 
-                {/* Pet Cards Section with Hover Effects */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                     {filteredPets.map((pet) => (
                         <div
                             key={pet.name}
-                            className="bg-white rounded-lg shadow-md p-6 w-full max-w-xs transform hover:scale-105 transition duration-300"
+                            className="bg-white rounded-lg shadow-lg p-6 transform hover:scale-105 transition-all cursor-pointer"
+                            onClick={() => router.push(`/pets/${pet.name.toLowerCase()}`)}
                         >
                             <img
                                 src={pet.image}
                                 alt={pet.name}
-                                width={200}
-                                height={200}
-                                className="w-full h-48 object-cover rounded-md mb-4"
+                                className="w-full h-48 object-cover rounded-t-md"
                             />
-                            <h3 className="text-lg font-semibold text-gray-800">{pet.name}</h3>
-                            <p className="text-gray-600 mb-4">{pet.description}</p>
+                            <h3 className="text-lg font-semibold text-gray-800 mt-4">{pet.name}</h3>
+                            <p className="text-gray-600 text-sm mt-2">{pet.description}</p>
                             <button
-                                onClick={() => router.push(`/pets/${pet.name.toLowerCase()}`)} // Correct usage of router.push
-                                className="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200"
+                                onClick={() => router.push(`/pets/${pet.name.toLowerCase()}`)}
+                                className="bg-green-600 text-white py-2 px-4 rounded-lg mt-4 hover:bg-green-700"
                             >
                                 Learn More
                             </button>
                         </div>
                     ))}
                 </div>
-
-                {/* Call-to-Action Section */}
-                <div className="bg-yellow-100 rounded-lg shadow-md p-6 mt-8 text-center">
-                    <h3 className="text-xl font-bold text-green-700">Get Involved</h3>
-                    <p className="text-lg text-gray-600 mt-4">
-                        Join us in supporting wildlife conservation efforts. Adopt pets responsibly, protect habitats, and educate others about wildlife preservation.
-                    </p>
-                    <button className="mt-4 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-200">
-                        Learn How You Can Help
-                    </button>
-                </div>
             </div>
+
+            {/* Call-to-Action Section */}
+            <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-20 text-center">
+                <h3 className="text-3xl font-bold">Ready to Make a Difference?</h3>
+                <p className="mt-4 text-lg">
+                    Join our community and start your journey from pet care to wildlife conservation.
+                </p>
+                <button className="mt-6 bg-white text-green-600 py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100"
+                onClick={() => router.push(`/forum`)}
+                >
+                    Get Started
+                </button>
+            </section>
 
             <Footer />
         </div>

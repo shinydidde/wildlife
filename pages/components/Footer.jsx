@@ -14,14 +14,13 @@ const Footer = () => {
           </Link>
         </div>
 
-        {/* Middle section: Logo or branding */}
-        {/* Optionally add a logo slider here */}
-        {/* <div className="flex justify-center mb-4 md:mb-0">
-          <ImageSlider images={logos} />
-        </div> */}
+        {/* Center Branding */}
+        <div className="text-center text-white text-lg font-semibold">
+          &copy; 2024 Wildlife Education. All rights reserved.
+        </div>
 
-        {/* Right side: More links */}
-        <div className="flex flex-wrap justify-center space-x-8 mb-4 md:mb-0">
+        {/* Right Links */}
+        <div className="flex space-x-8">
           <Link href="/virtual-tour" className="text-lg font-semibold text-white hover:text-green-200 transition duration-300">
             Virtual Tours
           </Link>
@@ -33,8 +32,6 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-
-      <p className="text-center text-lg text-white mt-6">&copy; 2024 Wildlife Education. All rights reserved.</p>
     </footer>
   );
 };

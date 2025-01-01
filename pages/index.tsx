@@ -172,7 +172,7 @@ const Home = () => {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
             </Head>
 
-            <div className="bg-gray-50 flex flex-col min-h-screen">
+            <div className="bg-primary flex flex-col min-h-screen">
                 <Header />
                 <div
                     className="relative bg-cover bg-fixed bg-center h-[100vh]"
@@ -243,7 +243,7 @@ const Home = () => {
                                         className={`relative min-w-[120px] cursor-pointer transition duration-300 ${selectedCategory === category ? 'opacity-50' : 'hover:opacity-80'}`}
                                         onClick={() => handleCategorySelect(category)}
                                     >
-                                        <div className="flex justify-center items-center border border-gray-300 h-28 w-full rounded-lg bg-white">
+                                        <div className="flex justify-center items-center border border-gray-300 h-28 w-full rounded-lg bg-primary">
                                             <div className="text-green-900 mb-2">
                                                 {categoryIcons[category]}
                                             </div>
@@ -276,7 +276,7 @@ const Home = () => {
                                     <button
                                         key={index}
                                         onClick={() => handlePageChange(typeof page === 'number' ? page : currentPage)}
-                                        className={`px-4 py-2 ${page === currentPage ? 'bg-green-700 text-white' : 'bg-gray-200'} rounded-lg mx-1 mb-2 sm:mb-0`}
+                                        className={`px-4 py-2 ${page === currentPage ? 'bg-green-700 text-white' : 'bg-white'} rounded-lg mx-1 mb-2 sm:mb-0`}
                                     >
                                         {page}
                                     </button>

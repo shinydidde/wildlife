@@ -24,7 +24,7 @@ const ContactUsPage = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-primary">
             <Header theme="dark" />
 
                 <Banner/>

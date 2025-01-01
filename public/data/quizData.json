@@ -48,5 +48,105 @@
         "question": "What percentage of the Earth's surface is covered by oceans?",
         "options": ["50%", "70%", "80%", "90%"],
         "answer": "70%"
+    },
+    {
+        "question": "Which mammal is known to have the most powerful bite?",
+        "options": ["Hippopotamus", "Tiger", "Crocodile", "Shark"],
+        "answer": "Hippopotamus"
+    },
+    {
+        "question": "Which is the only bird that can fly backward?",
+        "options": ["Hummingbird", "Eagle", "Flamingo", "Pigeon"],
+        "answer": "Hummingbird"
+    },
+    {
+        "question": "Which marine animal has eight legs and ink sacs for defense?",
+        "options": ["Octopus", "Squid", "Crab", "Lobster"],
+        "answer": "Octopus"
+    },
+    {
+        "question": "Which animal is known as the ‘Ship of the Desert’?",
+        "options": ["Camel", "Elephant", "Horse", "Donkey"],
+        "answer": "Camel"
+    },
+    {
+        "question": "What is the fastest bird in the world?",
+        "options": ["Peregrine Falcon", "Eagle", "Hawk", "Ostrich"],
+        "answer": "Peregrine Falcon"
+    },
+    {
+        "question": "Which animal is known for having a pouch to carry its young?",
+        "options": ["Kangaroo", "Koala", "Opossum", "All of the above"],
+        "answer": "All of the above"
+    },
+    {
+        "question": "What do we call a group of lions?",
+        "options": ["Pride", "Pack", "Herd", "Swarm"],
+        "answer": "Pride"
+    },
+    {
+        "question": "Which animal is known to have a memory that spans decades?",
+        "options": ["Elephant", "Dolphin", "Dog", "Parrot"],
+        "answer": "Elephant"
+    },
+    {
+        "question": "What is the only continent without native snakes?",
+        "options": ["Antarctica", "Australia", "Africa", "Europe"],
+        "answer": "Antarctica"
+    },
+    {
+        "question": "Which is the largest species of bear?",
+        "options": ["Polar Bear", "Grizzly Bear", "Panda Bear", "Black Bear"],
+        "answer": "Polar Bear"
+    },
+    {
+        "question": "Which animal can sleep standing up?",
+        "options": ["Horse", "Dog", "Elephant", "Giraffe"],
+        "answer": "Horse"
+    },
+    {
+        "question": "Which animal is known to have no vocal cords?",
+        "options": ["Giraffe", "Snake", "Crocodile", "Frog"],
+        "answer": "Giraffe"
+    },
+    {
+        "question": "What is the heaviest flying bird in the world?",
+        "options": ["Kori Bustard", "Albatross", "Pelican", "Swan"],
+        "answer": "Kori Bustard"
+    },
+    {
+        "question": "Which animal can live without water for its entire life?",
+        "options": ["Kangaroo Rat", "Camel", "Penguin", "Koala"],
+        "answer": "Kangaroo Rat"
+    },
+    {
+        "question": "What is the smallest mammal in the world?",
+        "options": ["Bumblebee Bat", "Pygmy Marmoset", "Shrew", "Jerboa"],
+        "answer": "Bumblebee Bat"
+    },
+    {
+        "question": "Which animal is known as the largest reptile?",
+        "options": ["Saltwater Crocodile", "Komodo Dragon", "Alligator", "Green Sea Turtle"],
+        "answer": "Saltwater Crocodile"
+    },
+    {
+        "question": "Which insect is known to migrate over vast distances?",
+        "options": ["Monarch Butterfly", "Honeybee", "Dragonfly", "Grasshopper"],
+        "answer": "Monarch Butterfly"
+    },
+    {
+        "question": "What color is a polar bear's skin?",
+        "options": ["Black", "White", "Pink", "Gray"],
+        "answer": "Black"
+    },
+    {
+        "question": "Which animal can regrow its limbs?",
+        "options": ["Starfish", "Octopus", "Gecko", "Lobster"],
+        "answer": "Starfish"
+    },
+    {
+        "question": "What is the tallest animal in the world?",
+        "options": ["Giraffe", "Elephant", "Kangaroo", "Ostrich"],
+        "answer": "Giraffe"
     }
 ]

@@ -51,7 +51,8 @@ const SanctuaryList: React.FC = () => {
       "Blue Barn Farm and Sanctuary": "https://www.bluebarnsanctuary.org/",
       "Welcome Home Animal Sanctuary": "https://www.welcomehomesanctuary.com/",
       "Animal Rescue League of Boston":"https://www.arlboston.org/",
-      "Arthur's Acres Animal Sanctuary": "https://www.arthursacresanimalsanctuary.org/"
+      "Arthur's Acres Animal Sanctuary": "https://www.arthursacresanimalsanctuary.org/",
+      "": "https://www.farmofthefree.org/"
     };
 
     const redirectUrl = sanctuaryLinks[sanctuaryName];
@@ -65,7 +66,7 @@ const SanctuaryList: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex justify-center items-center min-h-screen bg-primary">
         <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-500"></div>
       </div>
     );
@@ -74,7 +75,7 @@ const SanctuaryList: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-primary min-h-screen">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-br from-green-700 to-green-500 text-white p-8 text-center">
           <div
@@ -118,7 +119,7 @@ const SanctuaryList: React.FC = () => {
                 className={`px-4 py-2 rounded-lg font-medium ${
                   filter === region
                     ? "bg-green-700 text-white"
-                    : "bg-gray-200 text-gray-800 hover:bg-green-500 hover:text-white"
+                    : "bg-white text-gray-800 hover:bg-green-500 hover:text-white"
                 }`}
                 onClick={() => handleFilterChange(region)}
               >

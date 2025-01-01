@@ -54,3 +54,18 @@ body {
 .logo-slider .w-full {
   width: 80px;
 }
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: -60px; /* Adjust this value to hide the header */
+  left: 0;
+  width: 100%;
+  height: calc(100% + 60px); /* Adjust height to ensure the map fits properly */
+}
+
