@@ -66,6 +66,12 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
             Pets
           </Link>
           <Link
+            href="/mindfulness"
+            className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
+          >
+            Mindfulness
+          </Link>
+          <Link
             href="/contact-us"
             className={`text-lg font-medium ${textColor} hover:text-green-200 transition duration-300`}
           >
