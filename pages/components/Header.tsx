@@ -97,35 +97,41 @@ const Header: React.FC<HeaderProps> = ({ theme = 'light' }) => {
         <nav className="space-y-4"> {/* space-y-4 creates vertical spacing between the links */}
           <Link
             href="/"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`} // Added block to ensure the link takes up full width
+            className={`text-lg font-medium text-white block`} // Added block to ensure the link takes up full width
             onClick={() => setIsMenuOpen(false)} // Close menu on link click
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
+            className={`text-lg font-medium text-white block`}
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
             href="/sanctuaries"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
+            className={`text-lg font-medium text-white block`}
             onClick={() => setIsMenuOpen(false)}
           >
             Sanctuaries
           </Link>
           <Link
             href="/pets"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
+            className={`text-lg font-medium text-white block`}
             onClick={() => setIsMenuOpen(false)}
           >
             Pets
           </Link>
           <Link
+            href="/mindfulness"
+            className={`text-lg font-medium text-white block`}
+          >
+            Mindfulness
+          </Link>
+          <Link
             href="/contact-us"
-            className={`text-lg font-medium ${textColor} hover:text-green-600 transition duration-300 block`}
+            className={`text-lg font-medium text-white block`}
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
