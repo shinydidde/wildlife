@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 interface Animal {
     commonName: string;
@@ -69,7 +70,7 @@ const AnimalDetail: React.FC = () => {
 
     return (
         <>
-            <Header theme="dark"/>
+            <Header theme="dark" />
             <div className="min-h-screen py-6 mt-12">
                 <div className="container mx-auto flex flex-col md:flex-row gap-6">
                     {/* Animal Details Card */}
@@ -98,11 +99,20 @@ const AnimalDetail: React.FC = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-700">State Conservation Rank</h3>
-                                <p className="text-gray-600">{stateConservationRankStr}</p>
+                                <p className="text-gray-600">
+                                    <Link href="https://explorer.natureserve.org/AboutTheData/DataTypes/ConservationStatusCategories" target="_blank" className="text-lg font-medium hover:text-green-600 transition duration-300">
+                                        {stateConservationRankStr}
+                                    </Link>
+                                </p>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-700">Global Conservation Rank</h3>
-                                <p className="text-gray-600">{globalConservationRankStr}</p>
+                                <p className="text-gray-600">
+                                    <Link href="https://explorer.natureserve.org/AboutTheData/DataTypes/ConservationStatusCategories" target="_blank" className="text-lg font-medium hover:text-green-600 transition duration-300">
+                                        {globalConservationRankStr}
+                                    </Link>
+
+                                </p>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-700">Taxonomic Group</h3>
