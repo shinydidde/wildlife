@@ -10,7 +10,7 @@ const exercises = [
         id: 1,
         title: "Breathing with the Rhythm of Nature",
         description: "Focus on your breath while visualizing a peaceful forest or meadow.",
-        media: "https://i.gifer.com/1PXn.gif",
+        media: "https://i.pinimg.com/originals/c1/5c/07/c15c0726cac25d7ab24075c7b3621f71.gif",
         points: 10,
     },
     {

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Link from "next/link";
+import { ConservationRanks } from "../../utils/conservationRanks"; // Adjust the import path as needed
 
 interface Animal {
     commonName: string;
@@ -63,10 +63,15 @@ const AnimalDetail: React.FC = () => {
     // Handle case where data is not yet available
     if (!commonNameStr)
         return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-green-500"></div>
+            <div className="min-h-screen flex items-center justify-center bg-primary">
+                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-green-500"></div>
             </div>
         );
+
+    // Helper function to get rank descriptions
+    const getRankDescription = (rank: string): string => {
+        return ConservationRanks[rank] || "Description not available for this rank.";
+    };
 
     return (
         <>
@@ -99,19 +104,34 @@ const AnimalDetail: React.FC = () => {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-700">State Conservation Rank</h3>
-                                <p className="text-gray-600">
-                                    <Link href="https://explorer.natureserve.org/AboutTheData/DataTypes/ConservationStatusCategories" target="_blank" className="text-lg font-medium hover:text-green-600 transition duration-300">
-                                        {stateConservationRankStr}
-                                    </Link>
+                                <p className="text-gray-600 flex items-center">
+                                    {stateConservationRankStr}
+                                    <span
+                                        className="ml-2 text-sm text-green-600 cursor-pointer"
+                                        title={getRankDescription(stateConservationRankStr)}
+                                    >
+                                        ℹ️
+                                    </span>
+                                </p>
+                                {/* Optionally, display the description directly */}
+                                <p className="text-gray-500 text-sm mt-1">
+                                    {getRankDescription(stateConservationRankStr)}
                                 </p>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-700">Global Conservation Rank</h3>
-                                <p className="text-gray-600">
-                                    <Link href="https://explorer.natureserve.org/AboutTheData/DataTypes/ConservationStatusCategories" target="_blank" className="text-lg font-medium hover:text-green-600 transition duration-300">
-                                        {globalConservationRankStr}
-                                    </Link>
-
+                                <p className="text-gray-600 flex items-center">
+                                    {globalConservationRankStr}
+                                    <span
+                                        className="ml-2 text-sm text-green-600 cursor-pointer"
+                                        title={getRankDescription(globalConservationRankStr)}
+                                    >
+                                        ℹ️
+                                    </span>
+                                </p>
+                                {/* Optionally, display the description directly */}
+                                <p className="text-gray-500 text-sm mt-1">
+                                    {getRankDescription(globalConservationRankStr)}
                                 </p>
                             </div>
                             <div>
