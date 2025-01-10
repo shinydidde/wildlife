@@ -4,7 +4,39 @@ import { collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc } from '
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
-const censoredWords = ['badword1', 'badword2', 'offensiveword'];
+const censoredWords = [
+    "Poacher",
+    "Hunting",
+    "Illegal trade",
+    "Trophy hunting",
+    "Endangered killing",
+    "Animal abuse",
+    "Animal cruelty",
+    "Wildlife smuggling",
+    "Animal fighting",
+    "Environmental destruction",
+    "Deforestation",
+    "Habitat destruction",
+    "Extinction trade",
+    "Slaughter",
+    "Overfishing",
+    "Poaching gangs",
+    "Trophy collection",
+    "Captivity cruelty",
+    "Overhunting",
+    "Animal trafficking",
+    "Profit hunting",
+    "Fur trade",
+    "Exotic pet trade",
+    "Commercial hunting",
+    "Habitat loss",
+    "Illegal logging",
+    "Bushmeat trade",
+    "Wildlife exploitation",
+    "Profit-driven killing",
+    "Exploitation tourism"
+  ];
+
 
 interface ForumPost {
     id: string;
