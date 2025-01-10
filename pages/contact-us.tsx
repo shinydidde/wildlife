@@ -9,12 +9,24 @@ const ContactUsPage = () => {
     const [message, setMessage] = useState('');
     const [formStatus, setFormStatus] = useState('');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Handle form submission logic here (e.g., sending an email or saving the data)
-        if (name && email && message) {
-            setFormStatus('Thank you for reaching out. We will get back to you soon.');
+        if (name.trim() && email.trim() && message.trim()) {
+            // Encode the form data to make it URL-safe
+            const subject = encodeURIComponent('Contact Us Form Submission');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+            // Construct the mailto URL
+            const mailtoLink = `mailto:shinymrudula@gmail.com?subject=${subject}&body=${body}`;
+
+            // Open the default email client with the pre-filled email
+            window.location.href = mailtoLink;
+
+            // Optionally, update the form status
+            setFormStatus('Your email client has been opened. Please send the email.');
+
+            // Clear the form fields
             setName('');
             setEmail('');
             setMessage('');
@@ -27,7 +39,8 @@ const ContactUsPage = () => {
         <div className="min-h-screen flex flex-col bg-primary">
             <Header theme="dark" />
 
-                <Banner/>
+            <Banner />
+
             <div className="container mx-auto mt-12 px-4">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-green-600">Contact Us</h2>

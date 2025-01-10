@@ -35,7 +35,7 @@ const censoredWords = [
     "Wildlife exploitation",
     "Profit-driven killing",
     "Exploitation tourism"
-  ];
+];
 
 
 interface ForumPost {
@@ -146,6 +146,7 @@ const Forum: React.FC = () => {
 
                 {/* Posts Section */}
                 <div className="w-full md:w-2/3 bg-white shadow-lg rounded-lg p-6">
+                    {/* Search Bar */}
                     <div className="mb-6">
                         <input
                             type="text"
@@ -156,7 +157,8 @@ const Forum: React.FC = () => {
                         />
                     </div>
 
-                    <div className="space-y-4">
+                    {/* Scrollable Posts Wrapper */}
+                    <div className="space-y-4 max-h-[500px] overflow-y-auto">
                         {filteredPosts.length > 0 ? (
                             filteredPosts.map((post) => (
                                 <div
@@ -191,6 +193,7 @@ const Forum: React.FC = () => {
                         )}
                     </div>
                 </div>
+
 
             </div>
         </div>
